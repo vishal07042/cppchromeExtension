@@ -1,6 +1,6 @@
 import React from 'react'
 
-function App() {
+function App11() {
   return (
     <div>
       <h1>hello world</h1>
