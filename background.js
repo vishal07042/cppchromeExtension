@@ -609,7 +609,7 @@ console.log("Hello World");
     }
   ]
 
-let cppq1 = cpp[Math.floor(Math.random())* cpp.length];
+let cppq1 = cpp[Math.floor(Math.random())* cpp.length+2];
 // console.log(cppq1);
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {

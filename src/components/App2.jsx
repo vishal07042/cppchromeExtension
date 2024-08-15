@@ -24,7 +24,7 @@ function App2() {
     const [title, setTitle] = useState("");
     const [code, setCode] = useState("");
 
-    useEffect(() => {
+    // useEffect(() => {
         chrome.runtime.sendMessage({ message: "getRandomQuestion" }, (response) => {
             console.log("Response received:", response);
             if (response && response.length > 0) {
@@ -35,7 +35,7 @@ function App2() {
 					setCode(plainCode);
             }
         });
-    }, []);
+    // }, []);
 
      // Define a theme to customize the font size
     const customTheme = EditorView.theme({
@@ -46,7 +46,7 @@ function App2() {
     });
     return (
 		<div className='absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center z-10'>
-			<h2 className='text-2xl'>{title}</h2>
+			<h2 className='text-2xl '>{title}</h2>
 			<CodeMirror
 				className='text-4xl m-10 line-height-10'
 				value={code}
@@ -63,7 +63,7 @@ function App2() {
 				<code>{code}</code>
 			</pre> */}
 
-            {/* <div id="playground">
+			{/* <div id="playground">
     <pre class="code">
 msg = "Hello, World!"
 print(msg)
@@ -82,19 +82,25 @@ greet("World")
 
 <codapi-snippet sandbox="python" editor="basic"> </codapi-snippet> */}
 
-<pre>
-    {`#include <iostream>
+			<pre className='text-2xl hidden'>
+				{`#include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 int main() {
-    cout << "Hello, World!" << endl;
-    cout<<"heelo vishal";
+    
+    ${code}
 }`}
-</pre>
-
-<codapi-snippet sandbox="cpp" editor="basic">
-</codapi-snippet></div>
+			</pre>
+			<h1>
+				<codapi-snippet
+					className='text-2xl'
+					sandbox='cpp'
+					editor='basic'
+				></codapi-snippet>{" "}
+			</h1>
+		</div>
 	);
 }
 
