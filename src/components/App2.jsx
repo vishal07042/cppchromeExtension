@@ -25,6 +25,9 @@ function App2() {
     const [title, setTitle] = useState("");
     const [code, setCode] = useState("");
     const [choices, setChoices] = useState([]);
+	const [answer, setAnswer] = useState("");
+
+	const[variabletoAnswer,setVariabletoAnswer] = useState(false)
      useEffect(() => {
         chrome.runtime.sendMessage({ message: "getRandomQuestion" }, (response) => {
             console.log("Response received:", response);
@@ -32,7 +35,12 @@ function App2() {
                 setTitle(response[0].title);
 				setChoices(response[0].choices);
 				console.log(response[0].choices)
+
+				let aanswer = response[0].answer.split(" - \\[ \\] ").split("\\[ x\\]").join(" ");		
+				setAnswer(aanswer);
                 // setCode(response[0].code);
+
+				console.log(" anse"	,aanswer)
 
                  const plainCode = stripHtmlTags(response[0].code);
 					setCode(plainCode);
@@ -49,11 +57,12 @@ function App2() {
     });
     return (
 		<div className='absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center z-10'>
-			<h2 className='text-2xl '>{title}</h2>
+			<h2 className='text-2xl mt-10'>{title}</h2>
 			<CodeMirror
-				className='text-4xl m-10 line-height-10'
+				className='text-3xl m-10 line-height-10'
 				value={code}
-				height='200px'
+				height='400px'
+				width='700px'
 				extensions={[cpp()]}
 				theme='dark' // Optional: Choose a theme
 				basicSetup={basicSetup}
@@ -120,21 +129,67 @@ int main() {
 				</div>
 			))} */}
 
-			{choices.map((choice, index) => {
+			{/* {choices.map((choice, index) => {
 				const options = choice.split(" - \\[ \\] ");
 				return (
-					<div
-						key={index}
-						className='w-full my-2 p-4 border-4 border-gray-500 rounded-md text-center'
-					>
+					<div key={index} className=''>
 						{options.map((option, idx) => (
-							<h1 key={idx} className='text-2xl'>
+							<h1
+								key={idx}
+								className='text-2xl w-full my-2 p-4 border-4 border-gray-500 rounded-md text-center  bg-pink-500  hover:bg-green-400 '
+							>
 								{option}
 							</h1>
 						))}
 					</div>
 				);
+			})} */}
+
+			{choices.map((choice, index) => {
+				// Split the choice by either checked or unchecked markers
+				const options = choice.split(/ - \\[ \] | - \\[x\\]/);
+				return (
+					<div key={index} className=''>
+						{options.map((option, idx) => {
+							const isCorrect = choice.includes(
+								` - \\[x\\] ${option.trim()}`
+							);
+							return (
+								<h1
+									key={idx}
+									className={`text-2xl w-full my-2 p-4 border-4 rounded-md text-center ${
+										isCorrect
+											? "bg-green-400 border-gray-500"
+											: "bg-pink-500 border-gray-500 hover:bg-green-400"
+									}`}
+								>
+									{option.trim()}
+								</h1>
+							);
+						})}
+					</div>
+				);
 			})}
+
+			<button
+				className='bg-blue-500 text-white p-2 rounded-md'
+				onClick={() => {
+					setVariabletoAnswer(true);
+				}}
+			>
+				show answer
+			</button>
+
+			<p className='text-2xl '>{variabletoAnswer ? answer : ""}</p>
+
+			{variabletoAnswer && (
+				<button
+					className='bg-blue-500 text-white p-2 rounded-md'
+					onClick={() => {}}
+				>
+					next question
+				</button>
+			)}
 		</div>
 	);
 }

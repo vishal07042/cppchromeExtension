@@ -34,7 +34,7 @@ const App = () => {
 					],
 				},
 				color: {
-					value: "#791740",
+					value: "#f25149",
 				},
 			},
 			fpsLimit: 120,
@@ -61,7 +61,7 @@ const App = () => {
 			},
 			particles: {
 				color: {
-					value: "#ffffff",
+					value: "#000000",
 				},
 				links: {
 					color: "#ffffff",
