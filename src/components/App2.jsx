@@ -10,6 +10,7 @@ import { cpp } from "@codemirror/lang-cpp";
 import { basicSetup } from "codemirror";
 
  import { EditorView } from "@codemirror/view";
+
 //  import { basicSetup } from "codemirror";
 //  import { cpp } from "@codemirror/lang-cpp";
 
@@ -23,19 +24,21 @@ function App2() {
 
     const [title, setTitle] = useState("");
     const [code, setCode] = useState("");
-
-    // useEffect(() => {
+    const [choices, setChoices] = useState([]);
+     useEffect(() => {
         chrome.runtime.sendMessage({ message: "getRandomQuestion" }, (response) => {
             console.log("Response received:", response);
             if (response && response.length > 0) {
                 setTitle(response[0].title);
+				setChoices(response[0].choices);
+				console.log(response[0].choices)
                 // setCode(response[0].code);
 
                  const plainCode = stripHtmlTags(response[0].code);
 					setCode(plainCode);
             }
         });
-    // }, []);
+    }, []);
 
      // Define a theme to customize the font size
     const customTheme = EditorView.theme({
@@ -100,6 +103,38 @@ int main() {
 					editor='basic'
 				></codapi-snippet>{" "}
 			</h1>
+
+			{/* {choices.map((choice, index) => (
+				<div key={index} className='flex items-center justify-center border-4 border-gray-500 rounded-md'>
+					<h1 className='text-2xl block' >{choice}</h1>
+				</div>
+				
+			))} */}
+
+			{/* {choices.map((choice, index) => (
+				<div
+					key={index}
+					className='flex items-center justify-center border-4 border-gray-500 rounded-md'
+				>
+					{choice}
+				</div>
+			))} */}
+
+			{choices.map((choice, index) => {
+				const options = choice.split(" - \\[ \\] ");
+				return (
+					<div
+						key={index}
+						className='w-full my-2 p-4 border-4 border-gray-500 rounded-md text-center'
+					>
+						{options.map((option, idx) => (
+							<h1 key={idx} className='text-2xl'>
+								{option}
+							</h1>
+						))}
+					</div>
+				);
+			})}
 		</div>
 	);
 }
