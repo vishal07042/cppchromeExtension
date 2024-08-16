@@ -30,19 +30,51 @@ function App2() {
 	const[variabletoAnswer,setVariabletoAnswer] = useState(false)
      useEffect(() => {
         chrome.runtime.sendMessage({ message: "getRandomQuestion" }, (response) => {
-            console.log("Response received:", response);
+            // console.log("Response received:", response);
             if (response && response.length > 0) {
                 setTitle(response[0].title);
 				setChoices(response[0].choices);
-				console.log(response[0].choices)
+				//  console.log(response[0].choices[0])
 
-				let aanswer = response[0].answer.split(" - \\[ \\] ").split("\\[ x\\]").join(" ");		
-				setAnswer(aanswer);
-                // setCode(response[0].code);
+				 let stringOfChoices = response[0].choices[0]
 
-				console.log(" anse"	,aanswer)
+				 let convertChoice = String(stringOfChoices);
 
-                 const plainCode = stripHtmlTags(response[0].code);
+				 let ss = convertChoice;
+
+				 let startIndex = ss.indexOf("\\[x\\]");
+					let endIndex = ss.indexOf("\\[ \\]", startIndex);
+					let subString = ss.substring(startIndex, endIndex + 4);
+					// console.log(subString);
+
+					let finalAnswer = subString.substring(6, subString.length - 6);
+
+					console.log(finalAnswer);
+
+					set
+
+				//  console.log(typeof convertChoice) // string
+
+				// let aanswer = response[0].choices;
+
+				// const correctAnswerLine = convertChoice
+				// 	.split("\n")
+				// 	.find((line) => line.includes("- \\[x\\]"));
+
+				// if (correctAnswerLine) {
+				// 	// Extract text after '- \[x\]'
+				// 	const correctAnswer = correctAnswerLine
+				// 		.substring(correctAnswerLine.indexOf("- \\[x\\]") + 7) // Adjusted for the extra characters
+				// 		.trim();
+
+				// 	console.log(correctAnswer);
+				// } else {
+				// 	console.log("No correct answer found");
+				// }
+
+				// let {answer} = aanswer
+
+	const plainCode = stripHtmlTags(response[0].code);
 					setCode(plainCode);
             }
         });
@@ -154,6 +186,7 @@ int main() {
 							const isCorrect = choice.includes(
 								` - \\[x\\] ${option.trim()}`
 							);
+
 							return (
 								<h1
 									key={idx}
