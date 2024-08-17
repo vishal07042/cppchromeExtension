@@ -6,6 +6,10 @@ import { cpp } from "@codemirror/lang-cpp";
 import { basicSetup } from "codemirror";
 import { EditorView } from "@codemirror/view";
 
+import hljs from "highlight.js/lib/core";
+import javascript from "highlight.js/lib/languages/javascript";
+import cpps from "highlight.js/lib/languages/cpp";
+
 const stripHtmlTags = (html) => {
 	const tempDiv = document.createElement("div");
 	tempDiv.innerHTML = html;
@@ -13,6 +17,8 @@ const stripHtmlTags = (html) => {
 };
 
 function App2() {
+
+	// const ccpp = hljs.registerLanguage("cpp", cpp);
 	const [fullCode, setFullCode] = useState(``);
 
 	const [title, setTitle] = useState("");
@@ -80,10 +86,14 @@ function App2() {
 				/>
 			)}
 
-			<pre className={`aside   text-2xl ${editCode ? "hidden" : ""}`} onChange={(e)=>{
-                setCode(e.target.value)
-            }}>
-				{`#include <iostream>
+			<pre
+				className={`aside  ccpp  text-2xl ${editCode ? "hidden" : ""}`}
+				onChange={(e) => {
+					setCode(e.target.value);
+				}}
+			>
+				<code className="language-cpp">
+					{`#include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
@@ -92,6 +102,7 @@ int main() {
     
     ${code}
 }`}
+				</code>
 			</pre>
 			<h1>
 				<codapi-snippet
@@ -114,7 +125,7 @@ int main() {
 						{options.map((option, idx) => (
 							<button
 								key={idx}
-								className='w-full flex items-center justify-between px-12 py-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 m-4 transform transition-transform duration-300 hover:rotate-z-3 hover:origin-top-left'
+								className=' card w-full flex items-center justify-between px-12 py-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 m-4 '
 							>
 								<span className='text-xl font-semibold'>
 									{idx + 1}

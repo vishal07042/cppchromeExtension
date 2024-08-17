@@ -35,3 +35,24 @@ canvas{
    
     background-color: transparent;
 }
+
+ .card {
+
+        background-color: #fff;
+
+        /* margin: 200px; */
+        /* width: 300px;
+        height: 300px; */
+        /* border: 1px solid #000; */
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        transform: rotateX(0deg) rotateY(0deg);
+        transition: transform 1.5s ease-in-out;
+    }
+
+    .card:hover{
+
+        transform: rotateX(10deg) rotateY(-10deg);
+        transition: transform 0.9s ease-in-out;
+
+    }
