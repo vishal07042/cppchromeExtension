@@ -614,7 +614,7 @@ let cppq1 = cpp[Math.floor(Math.random())* cpp.length+9];
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 	if (request.message === "getRandomQuestion") {
-		const randomQuestion = cppq1;
+		const randomQuestion = cpp[Math.floor(Math.random()) * cpp.length ];
 
 		sendResponse([randomQuestion]);
 		console.log("Sending response for question:", randomQuestion);
