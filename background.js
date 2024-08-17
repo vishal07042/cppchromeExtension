@@ -1,4 +1,4 @@
-console.log("Hello World");
+// console.log("Hello World");
 
   let cpp = [
     {
@@ -609,14 +609,23 @@ console.log("Hello World");
     }
   ]
 
-let cppq1 = cpp[Math.floor(Math.random())* cpp.length+9];
-// console.log(cppq1);
+// let cppq1 = cpp[Math.floor(Math.random())* cpp.length+9];
+// // console.log(cppq1);
+
+// chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+// 	if (request.message === "getRandomQuestion") {
+// 		const randomQuestion = cpp[Math.floor(Math.random()) * cpp.length ];
+
+// 		sendResponse([randomQuestion]);
+// 		console.log("Sending response for question:", randomQuestion);
+// 	}
+// });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 	if (request.message === "getRandomQuestion") {
-		const randomQuestion = cpp[Math.floor(Math.random()) * cpp.length ];
-
-		sendResponse([randomQuestion]);
+		console.log("Received getRandomQuestion message");
+		const randomQuestion = cpp[Math.floor(Math.random() * cpp.length)];
 		console.log("Sending response for question:", randomQuestion);
+		sendResponse([randomQuestion]);
 	}
 });

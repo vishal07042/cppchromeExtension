@@ -19,15 +19,18 @@ function App2() {
     const [choices, setChoices] = useState([]);
 	const [answer, setAnswer] = useState("");
 
+	const [randomNumber, setRandomNumber] = useState(2);
+
 	const[variabletoAnswer,setVariabletoAnswer] = useState(false)
 
     useEffect(() => {
         chrome.runtime.sendMessage({ message: "getRandomQuestion" }, (response) => {
+            console.log("Initial response received:", response);
             if (response && response.length > 0) {
                 setTitle(response[0].title);
-				setChoices(response[0].choices);
-				const plainCode = stripHtmlTags(response[0].code);
-				setCode(plainCode);
+                setChoices(response[0].choices);
+                const plainCode = stripHtmlTags(response[0].code);
+                setCode(plainCode);
             }
         });
     }, []);
