@@ -24,3 +24,14 @@ canvas{
 .rotate-z-3 {
     transform: rotateZ(3deg);
 }
+
+.aside{
+
+    position:absolute;
+    z-index: 12;
+    top: 76px;
+   left :20px;
+    width: 300px;
+   
+    background-color: transparent;
+}
