@@ -88,7 +88,7 @@ function App2() {
         
     });
     return (
-		<div className='absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center z-10'>
+		<div className='absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center z-10 '>
 			<h2 className='text-2xl mt-10'>{title}</h2>
 			<CodeMirror
 				className='text-3xl m-10 line-height-10'
@@ -177,27 +177,52 @@ int main() {
 				);
 			})} */}
 
-			{choices.map((choice, index) => {
+			{/* {choices.map((choice, index) => {
 				// Split the choice by either checked or unchecked markers
 				const options = choice.split(/ - \\[ \] | - \\[x\\]/);
 				return (
 					<div key={index} className=''>
 						{options.map((option, idx) => {
-							const isCorrect = choice.includes(
-								` - \\[x\\] ${option.trim()}`
-							);
-
+							
 							return (
-								<h1
+								<div key={idx} className='flex items-center my-2'>
+									<input
+										type='radio'
+										id={`choice-${index}-${idx}`}
+										name={`choice-${index}`}
+										className='hidden'
+										checked={isCorrect}
+										readOnly
+									/>
+									<label
+										htmlFor={`choice-${index}-${idx}`}
+										
+									>
+										{option.trim()}
+									</label>
+								</div>
+							);
+						})}
+					</div>
+				);
+			})} */}
+
+			{choices.map((choice, index) => {
+				// Split the choice by either checked or unchecked markers
+				const options = choice.split(/ - \\[ \] | - \\[x\\]/);
+				return (
+					<div key={index} className='space-y-2'>
+						{options.map((option, idx) => {
+							return (
+								<button
 									key={idx}
-									className={`text-2xl w-full my-2 p-4 border-4 rounded-md text-center ${
-										isCorrect
-											? "bg-green-400 border-gray-500"
-											: "bg-pink-500 border-gray-500 hover:bg-green-400"
-									}`}
+									className='w-full flex items-center justify-between px-4 py-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100'
 								>
-									{option.trim()}
-								</h1>
+									<span className='text-xl font-semibold'>{idx + 1}</span>
+									<span className='text-gray-900'>
+										{option.trim()}
+									</span>
+								</button>
 							);
 						})}
 					</div>

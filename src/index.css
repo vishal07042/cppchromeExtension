@@ -16,3 +16,6 @@ codapi-toolbar>button{
 codapi-toolbar>a{
     display: none;
 }
+canvas{
+    background: linear-gradient(to right, #f25149, #16c99c);
+}

@@ -28,13 +28,13 @@ const App = () => {
 				linearGradient: {
 					colorStops: [
 						{
-							color: "#ffc0cb",
+							color: "#a4a5a8",
 							position: 0,
 						},
 					],
 				},
 				color: {
-					value: "#f25149",
+					value: "#eff1f5",
 				},
 			},
 			fpsLimit: 120,
@@ -102,16 +102,18 @@ const App = () => {
   );
 
   return (
-    <>
-      {init && (
-        <Particles
-          id="tsparticles"
-          particlesLoaded={particlesLoaded}
-          options={options}
-        />
-      )}
-      <App2 />
-    </>
+		<>
+			{init && (
+			
+					<Particles
+						id='tsparticles'
+						particlesLoaded={particlesLoaded}
+						options={options}
+					/>
+				
+			)}
+			<App2 />
+		</>
   );
 };
 
