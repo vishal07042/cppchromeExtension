@@ -21,7 +21,9 @@ function App2() {
 
 	const [randomNumber, setRandomNumber] = useState(2);
 
-	const[variabletoAnswer,setVariabletoAnswer] = useState(false)
+	const[variabletoAnswer,setVariabletoAnswer] = useState(false);
+
+	const[editCode,setEditCode] = useState(true);
 
     useEffect(() => {
         chrome.runtime.sendMessage({ message: "getRandomQuestion" }, (response) => {
@@ -63,7 +65,7 @@ function App2() {
 				<CodeMirror
 					className='text-3xl m-10 line-height-10'
 					value={code}
-					height='400px'
+					height='300px'
 					width='700px'
 					extensions={[cpp()]}
 					theme='dark' // Optional: Choose a theme
@@ -74,7 +76,7 @@ function App2() {
 				/>
 			)}
 
-			<pre className='text-2xl hidden'>
+			<pre className={`text-2xl ${editCode ? "hidden" : ""}`}>
 				{`#include <iostream>
 #include <string>
 #include <vector>
@@ -91,6 +93,9 @@ int main() {
 					sandbox='cpp'
 					editor='basic'
 				></codapi-snippet>{" "}
+				<button className='bg-blue-500 text-white p-2 rounded-md m-4' onClick={() => setEditCode(false)}>
+					edit code
+				</button>
 			</h1>
 
 			{choices.map((choice, index) => {
@@ -100,13 +105,13 @@ int main() {
 						{options.map((option, idx) => (
 							<button
 								key={idx}
-								className='w-full flex items-center justify-between px-12 py-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100  m-4 '
+								className='w-full flex items-center justify-between px-12 py-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 m-4 transform transition-transform duration-300 hover:rotate-z-3 hover:origin-top-left'
 							>
 								<span className='text-xl font-semibold'>
 									{idx + 1}
 								</span>
 								<span className='text-gray-900 items-center font-bold  text-2xl px-4'>
-									{option.trim()}
+									{option.replace(/\\/g, "").replace(/\\[x\\]/g, "").replace(/[\]x]/g, "").trim()}
 								</span>
 							</button>
 						))}

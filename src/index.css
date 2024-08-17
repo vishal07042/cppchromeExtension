@@ -19,3 +19,8 @@ codapi-toolbar>a{
 canvas{
     background: linear-gradient(to right, #f25149, #16c99c);
 }
+
+/* src/components/App2.css */
+.rotate-z-3 {
+    transform: rotateZ(3deg);
+}
