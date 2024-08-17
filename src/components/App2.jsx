@@ -17,7 +17,6 @@ const stripHtmlTags = (html) => {
 };
 
 function App2() {
-
 	// const ccpp = hljs.registerLanguage("cpp", cpp);
 	const [fullCode, setFullCode] = useState(``);
 
@@ -42,7 +41,77 @@ function App2() {
 					setChoices(response[0].choices);
 					const plainCode = stripHtmlTags(response[0].code);
 					setCode(plainCode);
+					let arr = [];
+					let arrs = response[0].choices[0];
+					console.log("arr is ", arr);
+
+					arr.push(arrs);
+
+					console.log(typeof arr); // string
+					console.log("zeroindex", arr[0]);
+
+					let str = arr[0];
+
+					// Split by - \\[ \\] first to separate unchecked options
+					let splitByUnchecked = str.split("- \\[ \\]");
+
+					// Combine all parts back with a separator for easier processing
+					let combinedString = splitByUnchecked.join(" - \\[ \\]");
+
+					// Split by - \\[x\\] to find the checked option
+					let splitByChecked = combinedString.split("- \\[x\\]");
+
+					// The first part contains all the text before the checked option
+					let beforeChecked = splitByChecked[0].trim();
+
+					// The second part contains the checked option and remaining unchecked options
+					let afterChecked = splitByChecked[1];
+
+					// Further split by - \\[ \\] to identify unchecked options after the checked one
+					let remainingUncheckedOptions = afterChecked
+						.split("- \\[ \\]")
+						.map((option) => option.trim());
+
+					// The first element in this split is the checked option
+					let checkedOption = remainingUncheckedOptions[0];
+
+					// The remaining elements are the unchecked options after the checked option
+					let uncheckedOptionsAfterChecked =
+						remainingUncheckedOptions.slice(1);
+
+					// All unchecked options, including those before the checked one
+					let allUncheckedOptions = splitByUnchecked
+						.slice(1)
+						.map((option) => option.trim());
+
+					// Combine all options and add numbers
+					let allOptions = [
+						`1. ${beforeChecked}`,
+						`2. ${checkedOption}`,
+						...allUncheckedOptions.map(
+							(option, index) => `${index + 3}. ${option}`
+						),
+					];
+
+					// Log the results
+					console.log("All options:", allOptions);
+					console.log("Correct option:", checkedOption);
+					setAnswer(checkedOption);
+
+					// Count the correct answer number
+					let correctAnswerNumber =
+						allOptions.findIndex((option) =>
+							option.includes(checkedOption)
+						) + 2;
+
+					console.log("Correct option number:", correctAnswerNumber);
+
 				}
+
+				// The first element of this split is the checked option
+				// let checkedOption = splitByUnchecked[0].trim();
+
+				// The remaining elements are the unchecked options
 			}
 		);
 	}, []);
@@ -92,7 +161,7 @@ function App2() {
 					setCode(e.target.value);
 				}}
 			>
-				<code className="language-cpp">
+				<code className='language-cpp'>
 					{`#include <iostream>
 #include <string>
 #include <vector>
@@ -144,7 +213,7 @@ int main() {
 			})}
 
 			<button
-				className='bg-blue-500 text-white p-2 rounded-md'
+				className='bg-blue-500 text-white p-2 rounded-md m-4'
 				onClick={() => {
 					setVariabletoAnswer(true);
 				}}
