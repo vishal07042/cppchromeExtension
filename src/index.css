@@ -56,35 +56,3 @@ canvas{
         transition: transform 0.9s ease-in-out;
 
     }
-
-    body{
-        scroll-behavior: smooth;
-        scroll-snap-type: y mandatory;
-        scroll-snap-align: start;
-    }
-
-
-    /* code{
-        font-size: 20px;
-    } */
-
-
-
-    .cm-layer {
-    
-    resize: both;
-    overflow: auto !important;
-
-
-     }
-
-     .CodeMirror {
-      resize: both;
-      overflow: auto !important;
-    }
-
-
-     /* .CodeMirror__wrapper {
-    resize: both;
-    overflow: auto !important;
-} */
