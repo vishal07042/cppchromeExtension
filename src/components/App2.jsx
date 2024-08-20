@@ -5,19 +5,46 @@ import { StreamLanguage } from "@codemirror/language";
 import { cpp } from "@codemirror/lang-cpp";
 import { basicSetup } from "codemirror";
 import { EditorView } from "@codemirror/view";
+import { autocompletion, completeFromList } from "@codemirror/autocomplete";
 
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 import cpps from "highlight.js/lib/languages/cpp";
+// import { autocompletion } from "@codemirror/autocomplete";
+
+
+// Define some example suggestions for autocomplete
+const cppSuggestions = [
+  { label: 'int', type: 'keyword' },
+  { label: 'float', type: 'keyword' },
+  { label: 'std::cout', type: 'function' },
+  { label: 'iostream', type: 'keyword' },
+  { label: 'main', type: 'snippet', insertText: 'int main(){return 0;}' },
+  // Add more suggestions as needed
+];
+
+
+const autocompleteExtension = autocompletion({
+	override: [completeFromList(cppSuggestions)],
+});
+
+
 
 const stripHtmlTags = (html) => {
 	const tempDiv = document.createElement("div");
 	tempDiv.innerHTML = html;
+	// Replace <br> tags with new lines
+	let textWithNewLines = tempDiv.innerHTML.replace(/<br\s*\/?>/gi, "\n");
+	// Remove ```cpp``` strings
+	textWithNewLines = textWithNewLines.replace(/```cpp/g, "");
+	tempDiv.innerHTML = textWithNewLines;
 	return tempDiv.textContent || tempDiv.innerText || "";
 };
 
 function App2() {
 	// const ccpp = hljs.registerLanguage("cpp", cpp);
+
+	const musicalNote = ["♪", "♫", "♬", "♩"];
 	const [fullCode, setFullCode] = useState(``);
 
 	const [title, setTitle] = useState("");
@@ -36,82 +63,18 @@ function App2() {
 			{ message: "getRandomQuestion" },
 			(response) => {
 				console.log("Initial response received:", response);
+
+				console.log("code is ", response[0].code2);
 				if (response && response.length > 0) {
+					console.log(response[0].answer);
+					setAnswer(response[0].answer);
 					setTitle(response[0].title);
 					setChoices(response[0].choices);
-					const plainCode = stripHtmlTags(response[0].code);
+					const plainCode = stripHtmlTags(response[0].code2);
+					console.log("response code is ", response[0].code2);
+					console.log("plain code is", plainCode);
 					setCode(plainCode);
-					let arr = [];
-					let arrs = response[0].choices[0];
-					console.log("arr is ", arr);
-
-					arr.push(arrs);
-
-					console.log(typeof arr); // string
-					console.log("zeroindex", arr[0]);
-
-					let str = arr[0];
-
-					// Split by - \\[ \\] first to separate unchecked options
-					let splitByUnchecked = str.split("- \\[ \\]");
-
-					// Combine all parts back with a separator for easier processing
-					let combinedString = splitByUnchecked.join(" - \\[ \\]");
-
-					// Split by - \\[x\\] to find the checked option
-					let splitByChecked = combinedString.split("- \\[x\\]");
-
-					// The first part contains all the text before the checked option
-					let beforeChecked = splitByChecked[0].trim();
-
-					// The second part contains the checked option and remaining unchecked options
-					let afterChecked = splitByChecked[1];
-
-					// Further split by - \\[ \\] to identify unchecked options after the checked one
-					let remainingUncheckedOptions = afterChecked
-						.split("- \\[ \\]")
-						.map((option) => option.trim());
-
-					// The first element in this split is the checked option
-					let checkedOption = remainingUncheckedOptions[0];
-
-					// The remaining elements are the unchecked options after the checked option
-					let uncheckedOptionsAfterChecked =
-						remainingUncheckedOptions.slice(1);
-
-					// All unchecked options, including those before the checked one
-					let allUncheckedOptions = splitByUnchecked
-						.slice(1)
-						.map((option) => option.trim());
-
-					// Combine all options and add numbers
-					let allOptions = [
-						`1. ${beforeChecked}`,
-						`2. ${checkedOption}`,
-						...allUncheckedOptions.map(
-							(option, index) => `${index + 3}. ${option}`
-						),
-					];
-
-					// Log the results
-					console.log("All options:", allOptions);
-					console.log("Correct option:", checkedOption);
-					setAnswer(checkedOption);
-
-					// Count the correct answer number
-					let correctAnswerNumber =
-						allOptions.findIndex((option) =>
-							option.includes(checkedOption)
-						) + 2;
-
-					console.log("Correct option number:", correctAnswerNumber);
-
 				}
-
-				// The first element of this split is the checked option
-				// let checkedOption = splitByUnchecked[0].trim();
-
-				// The remaining elements are the unchecked options
 			}
 		);
 	}, []);
@@ -121,13 +84,15 @@ function App2() {
 		chrome.runtime.sendMessage(
 			{ message: "getRandomQuestion" },
 			(response) => {
-				console.log("Response received:", response);
 				if (response && response.length > 0) {
+					console.log(response[0].answer);
+					setAnswer(response[0].answer);
 					setTitle(response[0].title);
 					setChoices(response[0].choices);
-					const plainCode = stripHtmlTags(response[0].code);
+					const plainCode = stripHtmlTags(response[0].code2);
+					console.log("response code is ", response[0].code2);
+					console.log("plain code is", plainCode);
 					setCode(plainCode);
-					setVariabletoAnswer(false); // Reset the answer visibility
 				}
 			}
 		);
@@ -139,19 +104,21 @@ function App2() {
 		},
 	});
 	return (
-		<div className='absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center z-10 '>
+		<div className='relative w-full min-h-screen overflow-y-auto flex flex-col items-center p-10 z-10'>
 			<h2 className='text-2xl mt-10'>{title}</h2>
 
 			{code && (
 				<CodeMirror
-					className='text-3xl m-10 line-height-10'
+					className='  CodeMirror text-3xl mt-10 line-height-10 '
 					value={code}
-					height='300px'
-					width='700px'
-					extensions={[cpp()]}
+					// height='700px'
+					// width='990px'
+					extensions={[cpp(), autocompleteExtension]}
 					theme='dark' // Optional: Choose a theme
 					basicSetup={basicSetup}
-					onChange={(values) => {}}
+					onChange={(value) => {
+						setCode(value);
+					}}
 				/>
 			)}
 
@@ -161,17 +128,7 @@ function App2() {
 					setCode(e.target.value);
 				}}
 			>
-				<code className='language-cpp'>
-					{`#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
-
-int main() {
-    
-    ${code}
-}`}
-				</code>
+				<code className='language-cpp'>{code}</code>
 			</pre>
 			<h1>
 				<codapi-snippet
@@ -197,7 +154,7 @@ int main() {
 								className=' card w-full flex items-center justify-between px-12 py-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 m-4 '
 							>
 								<span className='text-xl font-semibold'>
-									{idx + 1}
+									{musicalNote[idx]}
 								</span>
 								<span className='text-gray-900 items-center font-bold  text-2xl px-4'>
 									{option
