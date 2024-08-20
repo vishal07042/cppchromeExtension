@@ -20,7 +20,7 @@ const cppSuggestions = [
   { label: 'int', type: 'keyword' },
   { label: 'float', type: 'keyword' },
   { label: 'std::cout', type: 'function' },
-  { label: 'iostream', type: 'keyword' },
+//   { label: 'iostream', type: 'keyword' },
   { label: 'main', type: 'snippet', insertText: 'int main(){return 0;}' },
   // Add more suggestions as needed
 ];
@@ -61,7 +61,10 @@ function App2() {
 	const [editCode, setEditCode] = useState(true);
 
 	const [correctAnswerNo,setCorrectAnswerNo] = useState();
-	const [greenify, setGreenify] = useState();
+	const [greenify, setGreenify] = useState("");
+	const [reddify, setReddify] = useState("");
+
+	const [selectedOption, setSelectedOption] = useState(null);
 
 	useEffect(() => {
 		chrome.runtime.sendMessage(
@@ -127,6 +130,15 @@ function App2() {
 					onChange={(value) => {
 						setCode(value);
 					}}
+					onKeyDown={(event) => {
+						let typedKeys = '';
+						console.log("User is typing:", event.key);
+						typedKeys += event.key;
+						if (typedKeys === 'io') {
+							setCode(prevCode => prevCode.replace('io', 'int main(){}'));
+							typedKeys = '';
+						}
+					}}
 				/>
 			)}
 
@@ -152,40 +164,6 @@ function App2() {
 				</button>
 			</h1>
 
-			{/* {choices.map((choice, index) => {
-				const options = choice.split(/ - \\[ \] | - \\[x\\]/);
-				const musicalNotes = ["♪", "♫", "♬", "♩"];
-				
-				return (
-					<div key={index} className='space-y-2'>
-						{options.map((option, idx) => (
-							<button
-								key={idx}
-								className=' card w-full flex items-center justify-between px-12 py-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 m-4 '
-								onMouseEnter={() => {
-									console.log("playing song");
-									// Using onMouseEnter instead of onClick to play the sound on hover
-									// This will play the sound when the mouse enters the button area
-									const audio = new Audio(`../assets/correct.mp3`);
-									audio.play();
-								}}
-							>
-								<span className='text-xl font-semibold'>
-									{musicalNotes[idx]}
-								</span>
-								<span className='text-gray-900 items-center font-bold  text-2xl px-4'>
-									{option
-										.replace(/\\/g, "")
-										.replace(/\\[x\\]/g, "")
-										.replace(/[\]x]/g, "")
-										.trim()}
-								</span>
-							</button>
-						))}
-					</div>
-				);
-			})} */}
-
 			{choices.map((choice, index) => {
 				const options = choice.split(/ - \\[ \] | - \\[x\\]/);
 				const musicalNotes = ["♪", "♫", "♬", "♩"];
@@ -195,31 +173,50 @@ function App2() {
 						{options.map((option, idx) => (
 							<button
 								key={idx}
-								className={`card w-full flex items-center justify-between px-12 py-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 m-4 ${greenify}`}
+								className={`card w-full flex items-center justify-between px-12 py-2 border rounded-lg m-4 ${
+									selectedOption === option[0] ?greenify:reddify
+								}`}
 								onMouseEnter={() => {
-									console.log("playing song");
-									const audio = new Audio(
-										`../assets/correct.mp3`
-									);
-									audio.play();
+									
+									
+									
 								}}
-								onClick={(e) => {
-									// console.log(option[0] == correctAnswerNo);
+								onClick={() => {
+									console.log("playing song");
 
+									if(option[0] != correctAnswerNo){
+										console.log("wrong ans");
+										const audio = new Audio(
+											`../assets/incorrect.mp3`
+										);
+										audio.play();
+
+									}
+
+									
+
+									setSelectedOption(option[0]);
 									if (option[0] == correctAnswerNo) {
 										console.log("kar de hara");
-										setGreenify('outline outline-green-500 bg-green-100');
+										const audio = new Audio(
+											`../assets/correct.mp3`
+										);
+										audio.play();
+											setGreenify(
+												"outline outline-green-500 bg-green-100 text-green-500 border border-solid border-2 hover:bg-green-400"
+											);
+
+											setReddify("outline outline-red-500")
+
+											
+											
 									}
 								}}
 							>
-								<span className='text-xl font-semibold'>
-									{
-										musicalNotes[
-											(index + idx) % musicalNotes.length
-										]
-									}
+								<span className='text-xl font-semibold '>
+									{musicalNotes[(index + idx) % musicalNotes.length]}
 								</span>
-								<span className='text-gray-900 items-center font-bold text-2xl px-4'>
+								<span className=' items-center font-bold text-2xl px-4'>
 									{option
 										.replace(/\\/g, "")
 										.replace(/\\[x\\]/g, "")
@@ -243,14 +240,14 @@ function App2() {
 
 			<p className='text-2xl m-4 '>{variabletoAnswer ? answer : ""}</p>
 
-			{variabletoAnswer && (
-				<button
-					className='bg-blue-500 text-black p-2 rounded-md m-4'
-					onClick={fetchNextQuestion}
-				>
-					next question
-				</button>
-			)}
+				{variabletoAnswer && (
+					<button
+						className='bg-blue-500 text-black p-2 rounded-md m-4'
+						onClick={fetchNextQuestion}
+					>
+						next question
+					</button>
+				)}
 		</div>
 	);
 }
