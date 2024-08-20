@@ -5,7 +5,7 @@
    let cpp = [
 		{
 			id: 1,
-			title: "#### Q1. What is the output of this code?",
+			title: "# Q1. What is the output of this code?",
 			text: null,
 			code2: '```cpp<br> vector<int> v(22);<br> bool b = (v[6]);<br> printf("%d", !b);<br> ',
 			choices: ["1. False", "2. 0", "3. 1", "4. This code has an error."],
@@ -13,7 +13,7 @@
 		},
 		{
 			id: 2,
-			title: "#### Q2. Which of the following is a reason why using this line is considered a bad practice? (_Alternative_: Why is using this line considered a bad practice?)",
+			title: "# Q2. Which of the following is a reason why using this line is considered a bad practice? (_Alternative_: Why is using this line considered a bad practice?)",
 			text: null,
 			code2: "```cpp<br> using namespace std;<br> ",
 			choices: [
@@ -26,7 +26,7 @@
 		},
 		{
 			id: 3,
-			title: "#### Q3. What is the smallest size a variable of the type child_t may occupy in memory?",
+			title: "# Q3. What is the smallest size a variable of the type child_t may occupy in memory?",
 			text: null,
 			code2: "```cpp<br> typedef struct{<br>     unsigned int  age    : 4;<br>     unsigned char gender : 1;<br>     unsigned int  size   : 2;<br> }child_t;<br> ",
 			choices: ["1. 7 bits.", "2. 25 bytes.", "3. 1 bit.", "4. 1 byte."],
@@ -34,7 +34,7 @@
 		},
 		{
 			id: 4,
-			title: "#### Q4. What are the vectors v1 and v2 after executing the code?",
+			title: "# Q4. What are the vectors v1 and v2 after executing the code?",
 			text: null,
 			code2: "```cpp<br> std::vector<int> v1{1,2,3},v2;<br> v2=v1;<br> v1.push_back(4);<br> v2.push_back(5);<br> ",
 			choices: [
@@ -47,7 +47,7 @@
 		},
 		{
 			id: 5,
-			title: "#### Q5. Which of the following is a true statement about the difference between pointers and iterators?",
+			title: "# Q5. Which of the following is a true statement about the difference between pointers and iterators?",
 			text: null,
 			code2: "",
 			choices: [
@@ -60,7 +60,7 @@
 		},
 		{
 			id: 6,
-			title: "#### Q6. What's the storage occupied by u1?",
+			title: "# Q6. What's the storage occupied by u1?",
 			text: null,
 			code2: "```cpp<br> union {<br>     uint16_t a;<br>     uint32_t b;<br>     int8_t c;<br> } u1;<br> ",
 			choices: ["1. 4 bytes", "2. 7 bytes", "3. 8 bytes", "4. 2 bytes"],
@@ -68,7 +68,7 @@
 		},
 		{
 			id: 7,
-			title: "#### Q7. Which of the following operator can be overloaded?",
+			title: "# Q7. Which of the following operator can be overloaded?",
 			text: null,
 			code2: "",
 			choices: ["1. `?:`", "2. `new`", "3. `::`", "4. `.`"],
@@ -76,7 +76,7 @@
 		},
 		{
 			id: 8,
-			title: "#### Q8. Which of the following shows the contents of the vector pointed by v1 and v2 after running this code?",
+			title: "# Q8. Which of the following shows the contents of the vector pointed by v1 and v2 after running this code?",
 			text: null,
 			code2: "```cpp<br> std:: vector<int> *v1 = new std::vector<int>({1,2,3});<br> std:: vector<int> *v2;<br> v2=v1;<br> v1->push_back(4);<br> v2->push_back(5);<br> ",
 			choices: [
@@ -89,7 +89,7 @@
 		},
 		{
 			id: 9,
-			title: "#### Q9. Which of the following is not a difference between a class and a struct?",
+			title: "# Q9. Which of the following is not a difference between a class and a struct?",
 			text: null,
 			code2: "",
 			choices: [
@@ -102,7 +102,7 @@
 		},
 		{
 			id: 10,
-			title: "#### Q10. Suppose you need to keep a data struct with permission to access some resource based on the days of the week, but you can't use a bool variable for each day. You need to use one bit per day of the week. Which of the following is a correct implementation of a structure with bit fields for this application?",
+			title: "# Q10. Suppose you need to keep a data struct with permission to access some resource based on the days of the week, but you can't use a bool variable for each day. You need to use one bit per day of the week. Which of the following is a correct implementation of a structure with bit fields for this application?",
 			text: null,
 			code2: "```cpp<br> typedef struct {<br>     int sunday:1;<br>     int monday:1;<br>     // more days<br>     int friday:1;<br>     int saturday:1;<br> } weekdays;<br> ```cpp<br> typedef char[7]: weekdays;<br> ```cpp<br> typedef struct {<br>     bit sunday:1;<br>     bit monday:1;<br>     // more days<br>     bit friday:1;<br>     bit saturday:1;<br> } weekdays;<br> <br> ```cpp<br> typedef struct {<br>     bit sunday;<br>     bit monday;<br>     // more days<br>     bit friday;<br>     bit saturday;<br> } weekdays;<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -110,7 +110,7 @@
 		},
 		{
 			id: 11,
-			title: "#### Q11. What is an lvalue?",
+			title: "# Q11. What is an lvalue?",
 			text: null,
 			code2: "",
 			choices: [
@@ -123,7 +123,7 @@
 		},
 		{
 			id: 12,
-			title: "#### Q12. What does auto type specifier do in this line of code (since C++11)?",
+			title: "# Q12. What does auto type specifier do in this line of code (since C++11)?",
 			text: null,
 			code2: "```cpp<br> auto x = 4000.22;<br> ",
 			choices: [
@@ -136,7 +136,7 @@
 		},
 		{
 			id: 13,
-			title: "#### Q13. A class template is a \\_?",
+			title: "# Q13. A class template is a \\_?",
 			text: null,
 			code2: "",
 			choices: [
@@ -149,7 +149,7 @@
 		},
 		{
 			id: 14,
-			title: "#### Q14. What is the ternary operator equivalent to this code snippet?",
+			title: "# Q14. What is the ternary operator equivalent to this code snippet?",
 			text: null,
 			code2: "```cpp<br> if(x)<br>     y=a;<br> else<br>     y=b;<br> ",
 			choices: [
@@ -162,7 +162,7 @@
 		},
 		{
 			id: 15,
-			title: "#### Q15. What is the output of the code given below?",
+			title: "# Q15. What is the output of the code given below?",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> <br> int main(){<br>     int x=10, y=20;<br>     std::cout << "x = " << x++ << " and y = " << --y << std::endl;<br>     std::cout << "x = " << x-- << " and y = " << ++y << std::endl;<br>     return(0);<br> }<br> ',
 			choices: [
@@ -175,7 +175,7 @@
 		},
 		{
 			id: 16,
-			title: "#### Q16. What is the meaning of the two parts specified between parentheses in a range-based for loop, separated by a colon?",
+			title: "# Q16. What is the meaning of the two parts specified between parentheses in a range-based for loop, separated by a colon?",
 			text: null,
 			code2: "",
 			choices: [
@@ -188,7 +188,7 @@
 		},
 		{
 			id: 17,
-			title: "#### Q17. What is the output of the code given below?",
+			title: "# Q17. What is the output of the code given below?",
 			text: null,
 			code2: '```cpp<br> int8_t a=200;<br> uint8_t b=100;<br> if(a>b)<br>     std::cout<<"greater";<br> else<br>     std::cout<<"less";<br> ',
 			choices: [
@@ -201,7 +201,7 @@
 		},
 		{
 			id: 18,
-			title: "#### Q18. What is the output of this block of code?",
+			title: "# Q18. What is the output of this block of code?",
 			text: null,
 			code2: '```cpp<br> int8_t a=200;<br> uint8_t b=100;<br> std::cout<<"a="<<(int)a;<br> std::cout<<", b="<<(int)b;<br> ',
 			choices: [
@@ -214,7 +214,7 @@
 		},
 		{
 			id: 19,
-			title: "#### Q19. What is the output after executing this code snippet?",
+			title: "# Q19. What is the output after executing this code snippet?",
 			text: null,
 			code2: "```cpp<br> int x=5, y=2;<br> if(x & y) {<br>     /*_part A_*/<br> }<br> else {<br>     /*_part B_*/<br> }<br> ",
 			choices: [
@@ -227,7 +227,7 @@
 		},
 		{
 			id: 20,
-			title: "#### Q20. What is a valid definition for the `get_length` function, which returns the length of a null-terminated string?",
+			title: "# Q20. What is a valid definition for the `get_length` function, which returns the length of a null-terminated string?",
 			text: null,
 			code2: "```cpp<br> int get_length(char *str) {<br>     int count=0;<br>     while(str[count++]);<br>     return count-1;<br> }<br> ```cpp<br> int get_length(char *str) {<br>     int count=0;<br>     while(str!=NULL){<br>         count++;<br>         str++;<br>     }<br>     return count;<br> }<br> ```cpp<br> int get_length(char *str) {<br>     int count=0;<br>     while((*str)++)<br>         count++;<br>     return count;<br> }<br> ```cpp<br> int get_length(char *str) {<br>     int count=0;<br>     while(str++)<br>         count++;<br>     return count;<br> }<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -235,7 +235,7 @@
 		},
 		{
 			id: 21,
-			title: "#### Q21. Which STL class is the best fit for implementing a collection of data that is always ordered so that the pop operation always gets the greatest of the elements? Suppose you are interested only in push and pop operations.",
+			title: "# Q21. Which STL class is the best fit for implementing a collection of data that is always ordered so that the pop operation always gets the greatest of the elements? Suppose you are interested only in push and pop operations.",
 			text: null,
 			code2: "",
 			choices: [
@@ -248,7 +248,7 @@
 		},
 		{
 			id: 22,
-			title: "#### Q22. What is the meaning of the three sections specified between parentheses in a for loop separated by semicolons?",
+			title: "# Q22. What is the meaning of the three sections specified between parentheses in a for loop separated by semicolons?",
 			text: null,
 			code2: "",
 			choices: [
@@ -261,7 +261,7 @@
 		},
 		{
 			id: 23,
-			title: "#### Q23. What does this code print?",
+			title: "# Q23. What does this code print?",
 			text: null,
 			code2: '```cpp<br> int i = 0;<br> printf("%d", i++);<br> printf("%d", i--);<br> printf("%d", ++i);<br> printf("%d", --i);<br> ',
 			choices: ["1. 0,1,1,0", "2. 0,1,0,1", "3. 0,0,1,0", "4. 1,0,1,0"],
@@ -269,7 +269,7 @@
 		},
 		{
 			id: 24,
-			title: "#### Q24. What is true about the variable named `ptr`?",
+			title: "# Q24. What is true about the variable named `ptr`?",
 			text: null,
 			code2: "```cpp<br> void *ptr;<br> ",
 			choices: [
@@ -282,7 +282,7 @@
 		},
 		{
 			id: 25,
-			title: "#### Q25. What is the output of the code given below?",
+			title: "# Q25. What is the output of the code given below?",
 			text: null,
 			code2: "```cpp<br> int c=3; char d='A';<br> std::printf(\"c is %d and d is %c\",c,d);<br> ",
 			choices: [
@@ -295,7 +295,7 @@
 		},
 		{
 			id: 26,
-			title: "#### Q26. What is the output of this code?",
+			title: "# Q26. What is the output of this code?",
 			text: null,
 			code2: '```cpp<br> printf("1/2 = %f",(float)(1/2));<br> ',
 			choices: [
@@ -308,7 +308,7 @@
 		},
 		{
 			id: 27,
-			title: "#### Q27. What is the difference between a public and a private class member?",
+			title: "# Q27. What is the difference between a public and a private class member?",
 			text: null,
 			code2: "",
 			choices: [
@@ -321,7 +321,7 @@
 		},
 		{
 			id: 28,
-			title: "#### Q28. What is the value of `x` after executing this code?",
+			title: "# Q28. What is the value of `x` after executing this code?",
 			text: null,
 			code2: "```cpp<br> int x=10, a=-3;<br> x+=a;<br> ",
 			choices: ["1. 3", "2. 7", "3. -3", "4. 13"],
@@ -329,7 +329,7 @@
 		},
 		{
 			id: 29,
-			title: "#### Q29. Which statement is true?",
+			title: "# Q29. Which statement is true?",
 			text: null,
 			code2: "",
 			choices: [
@@ -342,7 +342,7 @@
 		},
 		{
 			id: 30,
-			title: "#### Q30. Consider a pointer to void, named `ptr`, which has been set to point to a floating point variable `g`. Which choice is a valid way to dereference `ptr` to assign its pointed value to a float variable `f` later in the program?",
+			title: "# Q30. Consider a pointer to void, named `ptr`, which has been set to point to a floating point variable `g`. Which choice is a valid way to dereference `ptr` to assign its pointed value to a float variable `f` later in the program?",
 			text: null,
 			code2: "```cpp<br> float g;<br> void *ptr=&g;<br> ",
 			choices: [
@@ -355,7 +355,7 @@
 		},
 		{
 			id: 31,
-			title: "#### Q31. What is the `.*` operator and what does it do?",
+			title: "# Q31. What is the `.*` operator and what does it do?",
 			text: null,
 			code2: "",
 			choices: [
@@ -368,7 +368,7 @@
 		},
 		{
 			id: 32,
-			title: '#### Q32. For these declarations, which choice shows four equivalent ways to assign the character "y" in the string to a char variable c?',
+			title: '# Q32. For these declarations, which choice shows four equivalent ways to assign the character "y" in the string to a char variable c?',
 			text: null,
 			code2: '```cpp<br> char buff[50] = "strings as arrays of characters are fun!"<br> char *str = buff+11;<br> char c;<br> ```cpp<br> c = buff[16];<br> c = str[5];<br> c = *(buff+16);<br> c = *(str+5);<br> ```cpp<br> c = *(buff[15]);<br> c = *(str[4]);<br> c = buff+15;<br> c = str+4;<br> ```cpp<br> c = buff[15];<br> c = str[4];<br> c = *(buff+15);<br> c = *(str+4);<br> ```cpp<br> c = *(buff[16]);<br> c = *(str[5]);<br> c = buff+16;<br> c = str+5;<br> ',
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -376,7 +376,7 @@
 		},
 		{
 			id: 33,
-			title: "#### Q33. Which choice is the correct declaration for the class named Dog, derived from the Animal class?",
+			title: "# Q33. Which choice is the correct declaration for the class named Dog, derived from the Animal class?",
 			text: null,
 			code2: "```cpp<br> class Animal{<br>     //....<br> }<br> ```cpp<br> class Dog :: public Animal {<br>    //....<br> };<br> ```cpp<br> class Dog : public Animal {<br>    //....<br> };<br> ```cpp<br> public class Animal :: Dog {<br>    //....<br> };<br> ```cpp<br> public class Dog extends Animal {<br>    //....<br> };<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -384,7 +384,7 @@
 		},
 		{
 			id: 34,
-			title: "#### Q34. What is the output of this code given below?",
+			title: "# Q34. What is the output of this code given below?",
 			text: null,
 			code2: '```cpp<br> #include <cstdio><br> using namespace std;<br> <br> int main(){<br>     char c = 255;<br>     if(c>10)<br>         printf("c = %i, which is greater than 10", c);<br>     else<br>         printf("c = %i, which is less than 10", c);<br>     return 0;<br> }<br> ',
 			choices: [
@@ -397,7 +397,7 @@
 		},
 		{
 			id: 35,
-			title: "#### Q35. How can C++ code call a C function?",
+			title: "# Q35. How can C++ code call a C function?",
 			text: null,
 			code2: "",
 			choices: [
@@ -410,7 +410,7 @@
 		},
 		{
 			id: 36,
-			title: "#### Q36. Which choice is _not_ a valid type definition of a structure that contains x and y coordinates as integers, and that can be used exactly as shown for the variable named `center`?",
+			title: "# Q36. Which choice is _not_ a valid type definition of a structure that contains x and y coordinates as integers, and that can be used exactly as shown for the variable named `center`?",
 			text: null,
 			code2: "```cpp<br> coord center;<br> center.x = 5;<br> center.y = 3;<br> ```cpp<br> typedef struct coord {<br>     int x;<br>     int y;<br> };<br> ```cpp<br> typedef struct coord {<br>     int x;<br>     int y;<br> } coord;<br> ```cpp<br> typedef struct {<br>     int x;<br>     int y;<br> } coord;<br> ```cpp<br> struct coord {<br>     int x;<br>     int y;<br> };<br> <br> typedef struct coord coord;<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -418,7 +418,7 @@
 		},
 		{
 			id: 37,
-			title: "#### Q37. Which choice does _not_ produce the same output as this code snippet? Assume the variable `i` will not be used anywhere else in the code.",
+			title: "# Q37. Which choice does _not_ produce the same output as this code snippet? Assume the variable `i` will not be used anywhere else in the code.",
 			text: null,
 			code2: "```cpp<br> for (i=1;i<10;i++){<br>     cout<<i<<endl;<br> }<br> ```cpp<br> i=1;<br> while(i<10){<br>     cout<<++i<<endl;<br> }<br> ```cpp<br> for (int i:{1,2,3,4,5,6,7,8,9}) {<br>     cout<<i<<endl;<br> }<br> ```cpp<br> i = 1;<br> do {<br>     cout<<i++<<endl;<br> } while(i<10);<br> ```cpp<br> i = 1;<br> loop:<br>     cout<<i++<<endl;<br>     if(i<10) goto loop;<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -426,7 +426,7 @@
 		},
 		{
 			id: 38,
-			title: "#### Q38. What does this part of a main.cpp file do?",
+			title: "# Q38. What does this part of a main.cpp file do?",
 			text: null,
 			code2: '```cpp<br> #include "library.h"<br> ',
 			choices: [
@@ -439,7 +439,7 @@
 		},
 		{
 			id: 39,
-			title: "#### Q39. Consider this function declaration of `is_even`, which takes in an integer and returns true if the argument is an even number and false otherwise. Which declarations are correct for overloaded versions of that function to support floating point numbers and string representations of numbers?",
+			title: "# Q39. Consider this function declaration of `is_even`, which takes in an integer and returns true if the argument is an even number and false otherwise. Which declarations are correct for overloaded versions of that function to support floating point numbers and string representations of numbers?",
 			text: null,
 			code2: "```cpp<br> bool is_even(int);<br> ```cpp<br> bool is_even(float f);<br> bool is_even(char *str);<br> ```cpp<br> bool is_even(float f);<br> bool is_even(char str);<br> ```cpp<br> bool is_even_float(float f);<br> bool is_even_str(char *str);<br> ```cpp<br> float is_even(float f);<br> char *is_even(char *str);<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -447,7 +447,7 @@
 		},
 		{
 			id: 40,
-			title: "#### Q40. Which choice is an include guard for the header file `my_library.h`?",
+			title: "# Q40. Which choice is an include guard for the header file `my_library.h`?",
 			text: null,
 			code2: "```cpp<br> #ifdef MY_LIBRARY_H<br> #define MY_LIBRARY_H<br> <br> // my_library.h content<br> <br> #endif /* MY_LIBRARY_H */<br> ```cpp<br> #ifndef MY_LIBRARY_H<br> #define MY_LIBRARY_H<br> <br> // my_library.h content<br> <br> #endif /* MY_LIBRARY_H */<br> ```cpp<br> #ifdef MY_LIBRARY_H<br> #undef MY_LIBRARY_H<br> <br> // my_library.h content<br> <br> #endif /* MY_LIBRARY_H */<br> ```cpp<br> #define MY_LIBRARY_H<br> #include MY_LIBRARY_H<br> <br> // my_library.h content<br> <br> #undef MY_LIBRARY_H<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -455,7 +455,7 @@
 		},
 		{
 			id: 41,
-			title: "#### Q41. What's wrong with this definition when using a pre-C++11 compiler?",
+			title: "# Q41. What's wrong with this definition when using a pre-C++11 compiler?",
 			text: null,
 			code2: "```cpp<br> std::vector<std::vector<int>> thematrix;<br> ",
 			choices: [
@@ -468,7 +468,7 @@
 		},
 		{
 			id: 42,
-			title: "#### Q42. What is the statement below equivalent to?",
+			title: "# Q42. What is the statement below equivalent to?",
 			text: null,
 			code2: "",
 			choices: [],
@@ -476,7 +476,7 @@
 		},
 		{
 			id: 43,
-			title: "#### Q42.b. What is the statement equivalent to?",
+			title: "# Q42.b. What is the statement equivalent to?",
 			text: null,
 			code2: "```cpp<br> sprite->x<br> ",
 			choices: [
@@ -489,7 +489,7 @@
 		},
 		{
 			id: 44,
-			title: "#### Q43. Consider a class named `complexNumber`. Which code will result in an equivalent object?",
+			title: "# Q43. Consider a class named `complexNumber`. Which code will result in an equivalent object?",
 			text: null,
 			code2: "```cpp<br> complexNumber(float real, float im)<br> : real_part(real),<br>  im_part(im){}<br> ```cpp<br> complexNumber(float real, float im) {<br>     this->real = real_part;<br>     this->im = im_part;<br> }<br> ```cpp<br> complexNumber(float real, float im) {<br>     this->real_part(real);<br>     this->im_part(im);<br> }<br> ```cpp<br> complexNumber(float real, float im) {<br>     this->real_part = real;<br>     this->im_part = im;<br> }<br> ```cpp<br> complexNumber(float real, float im) {<br>     this->real_part = &real;<br>     this->im_part = &im;<br> }<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -497,7 +497,7 @@
 		},
 		{
 			id: 45,
-			title: "#### Q44. What is the result of executing this code snippet?",
+			title: "# Q44. What is the result of executing this code snippet?",
 			text: null,
 			code2: "```cpp<br> bool x=true, y=false;<br> <br> if (~x || y) {<br>     /*part A*/<br> } else {<br>     /*part B*/<br> }<br> ",
 			choices: [
@@ -510,7 +510,7 @@
 		},
 		{
 			id: 46,
-			title: "#### Q45. What would be the output of this code?",
+			title: "# Q45. What would be the output of this code?",
 			text: null,
 			code2: "```cpp<br> int32_t nums[3]={2,4,3};<br> std::cout << ( nums[0] << nums[1] << nums[2] );<br> ",
 			choices: [
@@ -523,7 +523,7 @@
 		},
 		{
 			id: 47,
-			title: "#### Q46. What is the output of this code?",
+			title: "# Q46. What is the output of this code?",
 			text: null,
 			code2: '```cpp<br> float values[5]={0.54f, 2.71828f, 3.14159f, 5.499999f, 10.0f};<br> for(auto f:values)<br>     printf("%i ",(int)(f+0.5f));<br> ',
 			choices: [
@@ -536,7 +536,7 @@
 		},
 		{
 			id: 48,
-			title: "#### Q47. Which of the following STL classes is the best fit for implementing a phonebook? Suppose each entry contains a name and a phone number, with no duplicates, and you want to have a lookup by name.",
+			title: "# Q47. Which of the following STL classes is the best fit for implementing a phonebook? Suppose each entry contains a name and a phone number, with no duplicates, and you want to have a lookup by name.",
 			text: null,
 			code2: "",
 			choices: [
@@ -549,7 +549,7 @@
 		},
 		{
 			id: 49,
-			title: "#### Q48. What does this program do?",
+			title: "# Q48. What does this program do?",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> #include <fstream><br> using namespace std;<br> <br> int main(){<br>     ifstream file1("text1.txt", ios::binary);<br>     ofstream file2("text2.txt", ios::binary);<br>     file2 << file1.rdbuf();<br> }<br> ',
 			choices: [
@@ -562,7 +562,7 @@
 		},
 		{
 			id: 50,
-			title: "#### Q49. Which of the following is _not_ a consequence of declaring the member variable `count` of my_class as static? / Alt.: Which statement is true when declaring the member variable `count` as static?",
+			title: "# Q49. Which of the following is _not_ a consequence of declaring the member variable `count` of my_class as static? / Alt.: Which statement is true when declaring the member variable `count` as static?",
 			text: null,
 			code2: "```cpp<br> class my_class {<br>     public: static int count;<br> }<br> ",
 			choices: [
@@ -575,7 +575,7 @@
 		},
 		{
 			id: 51,
-			title: "#### Q50. What is the assumed type of a constant represented in the source code as `0.44`?",
+			title: "# Q50. What is the assumed type of a constant represented in the source code as `0.44`?",
 			text: null,
 			code2: "",
 			choices: [
@@ -588,7 +588,7 @@
 		},
 		{
 			id: 52,
-			title: "#### Q51. What is an appropriate way of removing `my_object` as shown below?",
+			title: "# Q51. What is an appropriate way of removing `my_object` as shown below?",
 			text: null,
 			code2: "```cpp<br> my_class *my_object = new my_class();<br> ",
 			choices: [
@@ -601,7 +601,7 @@
 		},
 		{
 			id: 53,
-			title: "#### Q52. What is the correct way to call the `count` member function for the object pointer called `grades`?",
+			title: "# Q52. What is the correct way to call the `count` member function for the object pointer called `grades`?",
 			text: null,
 			code2: "```cpp<br> class my_array{<br>     public:<br>         int count();<br> };  // ... more members above<br> <br> int main(){<br>     my_array *grades = new my_array();<br> };  // ... more code above<br> ",
 			choices: [
@@ -614,7 +614,7 @@
 		},
 		{
 			id: 54,
-			title: "#### Q53. What would be the output of this code?",
+			title: "# Q53. What would be the output of this code?",
 			text: null,
 			code2: "```cpp<br> int i0=4, i1=6, i2=8;<br> int& nums[3]={i2,i0,i1};<br> std::cout<<nums[0]<<nums[1]<<nums[2];<br> ",
 			choices: [
@@ -627,7 +627,7 @@
 		},
 		{
 			id: 55,
-			title: "#### Q54. Does this code cause a compiler error? If so, why, and if not, what is `child_t`?",
+			title: "# Q54. Does this code cause a compiler error? If so, why, and if not, what is `child_t`?",
 			text: null,
 			code2: "```cpp<br> typedef struct{<br>     unsigned int  age    : 4;<br>     unsigned char gender : 1;<br>     char                 : 0;<br>     unsigned int  size   : 2;<br> }child_t;<br> ",
 			choices: [
@@ -640,7 +640,7 @@
 		},
 		{
 			id: 56,
-			title: "#### Q55. What is this expression equivalent to?",
+			title: "# Q55. What is this expression equivalent to?",
 			text: null,
 			code2: "```cpp<br> A->B<br> ",
 			choices: ["1. `*(A.B)`", "2. `B=A`", "3. `(*A).B`", "4. `&A.B`"],
@@ -648,7 +648,7 @@
 		},
 		{
 			id: 57,
-			title: "#### Q56. What is this expression equivalent to?",
+			title: "# Q56. What is this expression equivalent to?",
 			text: null,
 			code2: "```cpp<br> A->B->C->D<br> ",
 			choices: [
@@ -661,7 +661,7 @@
 		},
 		{
 			id: 58,
-			title: "#### Q57. What does this function do?",
+			title: "# Q57. What does this function do?",
 			text: null,
 			code2: "```cpp<br> auto buff = new char[50];<br> std::memset(buff,20,50);<br> ",
 			choices: [
@@ -674,7 +674,7 @@
 		},
 		{
 			id: 59,
-			title: "#### Q58. Consider a class named `CustomData`. Which choice is a correct declaration syntax to overload the postfix `++` operator as a class member?",
+			title: "# Q58. Consider a class named `CustomData`. Which choice is a correct declaration syntax to overload the postfix `++` operator as a class member?",
 			text: null,
 			code2: "",
 			choices: [
@@ -687,7 +687,7 @@
 		},
 		{
 			id: 60,
-			title: "#### Q59. You want to sort my_array, declared below. Which choice is the correct call to std::sort, using a lambda expression as the comparison function?",
+			title: "# Q59. You want to sort my_array, declared below. Which choice is the correct call to std::sort, using a lambda expression as the comparison function?",
 			text: null,
 			code2: "```cpp<br> std::array<uint32_t, 50> my_array;<br> ```cpp<br> std::sort(my_array.begin(), my_array.end(),<br>     [](uint32_t a, uint32_t b) {<br>         return a < b;<br>     })<br> ```cpp<br> lambda(uint32_t a, uint32_t b){<br>     return a < b;<br> }<br> std::sort(my_array.begin(), my_array.end(), lambda);<br> ```cpp<br> std::sort(my_array.begin(), my_array.end(),<br>     lambda(uint32_t a, uint32_t b){<br>         return a < b;<br>     })<br> ```cpp<br> lambda(uint32_t a, uint32_t b){<br>     return a < b;<br> }<br> std::sort(my_array.begin(), my_array.end(), &lambda);<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -695,7 +695,7 @@
 		},
 		{
 			id: 61,
-			title: "#### Q60. Which choice is the most reasonable implementation of the function std::mutex::lock() by using std::mutex::try_lock()?",
+			title: "# Q60. Which choice is the most reasonable implementation of the function std::mutex::lock() by using std::mutex::try_lock()?",
 			text: null,
 			code2: "```cpp<br> void std::mutex::lock(){<br>     while(!this->try_lock());<br> }<br> ```cpp<br> void std::mutex::lock(){<br>     return (this->try_lock());<br> }<br> ```cpp<br> void std::mutex::lock(){<br>     while(1)<br>         this->try_lock();<br> }<br> ```cpp<br> void std::mutex::lock(){<br>     while(this->try_lock());<br> }<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -703,7 +703,7 @@
 		},
 		{
 			id: 62,
-			title: "#### Q61. What is the main difference between these two Functions?",
+			title: "# Q61. What is the main difference between these two Functions?",
 			text: null,
 			code2: "```cpp<br> std::mutex::lock()<br> std::mutex::try_lock()<br> ",
 			choices: [
@@ -716,7 +716,7 @@
 		},
 		{
 			id: 63,
-			title: "#### Q62. What is the purpose of a destructor?",
+			title: "# Q62. What is the purpose of a destructor?",
 			text: null,
 			code2: "",
 			choices: [
@@ -729,7 +729,7 @@
 		},
 		{
 			id: 64,
-			title: "#### Q63. What is one benefit of declaring the parameter as a `const` reference instead of declaring it as a regular object?",
+			title: "# Q63. What is one benefit of declaring the parameter as a `const` reference instead of declaring it as a regular object?",
 			text: null,
 			code2: "```cpp<br> int calculateMedian(const my_array& a)<br> ",
 			choices: [
@@ -742,7 +742,7 @@
 		},
 		{
 			id: 65,
-			title: "#### Q64. What is an include guard?",
+			title: "# Q64. What is an include guard?",
 			text: null,
 			code2: "",
 			choices: [
@@ -755,7 +755,7 @@
 		},
 		{
 			id: 66,
-			title: "#### Q65. What would be the correct declaration of a default constructor for a class named Sprite?",
+			title: "# Q65. What would be the correct declaration of a default constructor for a class named Sprite?",
 			text: null,
 			code2: "",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -763,7 +763,7 @@
 		},
 		{
 			id: 67,
-			title: "#### Q66. What is the purpose of this line in a header file?",
+			title: "# Q66. What is the purpose of this line in a header file?",
 			text: null,
 			code2: "```cpp<br> #pragma once<br> ",
 			choices: [
@@ -776,7 +776,7 @@
 		},
 		{
 			id: 68,
-			title: "#### Q67. What is a variable of type double?",
+			title: "# Q67. What is a variable of type double?",
 			text: null,
 			code2: "",
 			choices: [
@@ -789,7 +789,7 @@
 		},
 		{
 			id: 69,
-			title: "#### Q68. Other than shifting bits to the left, what is the << operator used for?",
+			title: "# Q68. Other than shifting bits to the left, what is the << operator used for?",
 			text: null,
 			code2: "",
 			choices: [
@@ -802,7 +802,7 @@
 		},
 		{
 			id: 70,
-			title: "#### Q69. Which choice is a reason to specify the type of a pointer instead of using `void *`, which works as a pointer to any type?",
+			title: "# Q69. Which choice is a reason to specify the type of a pointer instead of using `void *`, which works as a pointer to any type?",
 			text: null,
 			code2: "",
 			choices: [
@@ -815,7 +815,7 @@
 		},
 		{
 			id: 71,
-			title: "#### Q70. What is wrong with this piece of code?",
+			title: "# Q70. What is wrong with this piece of code?",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> char str[20];<br> int main(){<br>     std::cout << "What\'s your name? ";<br>     str << std::cin<br>     std::cout << "Hello, " << str;<br>     return 0;<br> }<br> ',
 			choices: [
@@ -828,7 +828,7 @@
 		},
 		{
 			id: 72,
-			title: "#### Q71. When placed in a valid execution context, which statement will dynamically allocate memory from the heap for an integer of value 11?",
+			title: "# Q71. When placed in a valid execution context, which statement will dynamically allocate memory from the heap for an integer of value 11?",
 			text: null,
 			code2: "",
 			choices: [
@@ -841,7 +841,7 @@
 		},
 		{
 			id: 73,
-			title: "#### Q72. Which choice best describes the type `long`?",
+			title: "# Q72. Which choice best describes the type `long`?",
 			text: null,
 			code2: "",
 			choices: [
@@ -854,7 +854,7 @@
 		},
 		{
 			id: 74,
-			title: "#### Q73. Which of the following types has the closest functionality to a class?",
+			title: "# Q73. Which of the following types has the closest functionality to a class?",
 			text: null,
 			code2: "",
 			choices: [
@@ -867,7 +867,7 @@
 		},
 		{
 			id: 75,
-			title: '#### Q74. Given these records in a map, how will you update the value for the key "Sinead" to 22?',
+			title: '# Q74. Given these records in a map, how will you update the value for the key "Sinead" to 22?',
 			text: null,
 			code2: "",
 			choices: [
@@ -880,7 +880,7 @@
 		},
 		{
 			id: 76,
-			title: "#### Q75. Why can the std::sort receive a function object as one of its parameters?",
+			title: "# Q75. Why can the std::sort receive a function object as one of its parameters?",
 			text: null,
 			code2: "",
 			choices: [
@@ -893,7 +893,7 @@
 		},
 		{
 			id: 77,
-			title: "#### Q76. What will happen when you execute this code snippet?",
+			title: "# Q76. What will happen when you execute this code snippet?",
 			text: null,
 			code2: "```cpp\n#include <iostream>\n\nint main() {\nfloat a = 5.51;\nint b = static_cast<int>(a);\nstd::cout << b;\n}\n```",
 			choices: [
@@ -906,7 +906,7 @@
 		},
 		{
 			id: 78,
-			title: "#### Q77. Which access specifier does not allow class members to be accessed from outside the class, but allows them to be accessed by derived classes?",
+			title: "# Q77. Which access specifier does not allow class members to be accessed from outside the class, but allows them to be accessed by derived classes?",
 			text: null,
 			code2: "",
 			choices: ["1. guarded", "2. protected", "3. public", "4. private"],
@@ -914,7 +914,7 @@
 		},
 		{
 			id: 79,
-			title: "#### Q78. The default executable generation on UNIX for a C++ program is \\_",
+			title: "# Q78. The default executable generation on UNIX for a C++ program is \\_",
 			text: null,
 			code2: "",
 			choices: ["1. a.exe", "2. a", "3. a.out", "4. out.a"],
@@ -922,7 +922,7 @@
 		},
 		{
 			id: 80,
-			title: "#### Q79. What will be the output of the following program?",
+			title: "# Q79. What will be the output of the following program?",
 			text: null,
 			code2: "```cpp<br> #include <iostream><br> using namespace std;<br> int main() {<br>   int a=1;<br>   cout<<(a++)*(++a)<<endl;<br>   return 0;<br> }<br> ",
 			choices: ["1. 1", "2. 2", "3. 3", "4. 6"],
@@ -930,7 +930,7 @@
 		},
 		{
 			id: 81,
-			title: '#### Q80. What does "c" stand for in cout and cin?',
+			title: '# Q80. What does "c" stand for in cout and cin?',
 			text: null,
 			code2: "",
 			choices: [
@@ -943,7 +943,7 @@
 		},
 		{
 			id: 82,
-			title: "#### Q81. What is the use of tellp()?",
+			title: "# Q81. What is the use of tellp()?",
 			text: null,
 			code2: "",
 			choices: [
@@ -956,7 +956,7 @@
 		},
 		{
 			id: 83,
-			title: "#### Q82. What is callback function?",
+			title: "# Q82. What is callback function?",
 			text: null,
 			code2: "",
 			choices: [
@@ -969,7 +969,7 @@
 		},
 		{
 			id: 84,
-			title: '#### Q83. What is the correct syntax to output "Hello World" in C++?',
+			title: '# Q83. What is the correct syntax to output "Hello World" in C++?',
 			text: null,
 			code2: "",
 			choices: [
@@ -982,7 +982,7 @@
 		},
 		{
 			id: 85,
-			title: "#### Q84. How many categories of iterators are there in C++?",
+			title: "# Q84. How many categories of iterators are there in C++?",
 			text: null,
 			code2: "",
 			choices: ["1. 4", "2. 3", "3. 7", "4. 5"],
@@ -990,7 +990,7 @@
 		},
 		{
 			id: 86,
-			title: "#### Q85. What is the meaning of base class in C++ ?",
+			title: "# Q85. What is the meaning of base class in C++ ?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1003,7 +1003,7 @@
 		},
 		{
 			id: 87,
-			title: "#### Q86. The size of C++ objects is expressed in terms of multiples of the size of a ** and the size of a char is **.",
+			title: "# Q86. The size of C++ objects is expressed in terms of multiples of the size of a ** and the size of a char is **.",
 			text: null,
 			code2: "",
 			choices: ["1. char, 4", "2. float, 8", "3. int, 1", "4. char, 1"],
@@ -1011,7 +1011,7 @@
 		},
 		{
 			id: 88,
-			title: "#### Q87. Implementation-dependent aspects about an implementation can be found in",
+			title: "# Q87. Implementation-dependent aspects about an implementation can be found in",
 			text: null,
 			code2: "",
 			choices: [
@@ -1024,7 +1024,7 @@
 		},
 		{
 			id: 89,
-			title: "#### Q88. What is a default constructor?",
+			title: "# Q88. What is a default constructor?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1037,7 +1037,7 @@
 		},
 		{
 			id: 90,
-			title: "#### Q89. When protecting a header file, why would you use '#pragma once' instead of 'include' guard?",
+			title: "# Q89. When protecting a header file, why would you use '#pragma once' instead of 'include' guard?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1050,7 +1050,7 @@
 		},
 		{
 			id: 91,
-			title: "#### Q90. Which of the following statements is valid?",
+			title: "# Q90. Which of the following statements is valid?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1063,7 +1063,7 @@
 		},
 		{
 			id: 92,
-			title: "#### Q91. Which of the following is/are automatically added to every class, if we do not write our own?",
+			title: "# Q91. Which of the following is/are automatically added to every class, if we do not write our own?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1076,7 +1076,7 @@
 		},
 		{
 			id: 93,
-			title: "#### Q92. The if-else statement can be replaced by which operator?",
+			title: "# Q92. The if-else statement can be replaced by which operator?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1089,7 +1089,7 @@
 		},
 		{
 			id: 94,
-			title: "#### Q93. Which choice would be a recursive solution to the factorial n! problem?",
+			title: "# Q93. Which choice would be a recursive solution to the factorial n! problem?",
 			text: null,
 			code2: "```cpp<br> void fact(int n) {<br>     if (n <= 0)<br>         return 0;<br>     else<br>         return 1;<br> }<br> ```cpp<br> int fact(int n) {<br>     if (n <= 0)<br>         return 1;<br>     else<br>         return (fact(n) * (n-1));<br> }<br> ```cpp<br> int fact(int n) {<br>     if (n >= 0)<br>         return 1;<br>     else<br>         return (fact(n-1) * n);<br> }<br> ```cpp<br> int fact(int n) {<br>     if (n <= 0)<br>         return 1;<br>     else<br>         return (fact(n-1) * n);<br> }<br> ",
 			choices: ["1. &shy;", "2. &shy;", "3. &shy;", "4. &shy;"],
@@ -1097,7 +1097,7 @@
 		},
 		{
 			id: 95,
-			title: "#### Q94. A class destructor can be called when a variety of situations occur. Which choice is not one of those situations?",
+			title: "# Q94. A class destructor can be called when a variety of situations occur. Which choice is not one of those situations?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1110,7 +1110,7 @@
 		},
 		{
 			id: 96,
-			title: "#### Q95. You are designing a foreign exchange payments system in C++, You need to model a transaction of a currency that has an integer as its quantity and a float as its price. You then want to declare an actual object of this type. How will you achieve this?",
+			title: "# Q95. You are designing a foreign exchange payments system in C++, You need to model a transaction of a currency that has an integer as its quantity and a float as its price. You then want to declare an actual object of this type. How will you achieve this?",
 			text: null,
 			code2: "```cpp<br> struct currencyDeal {<br>     float price;<br>     int quantity;<br> };<br> <br> currencyDeal firstDeal;<br> ```cpp<br> union currencyDeal {<br>     float price;<br>     int quantity;<br> };<br> <br> currencyDeal firstDeal;<br> ```cpp<br> struct currencyDeal {<br>     float price;<br>     int quantity;<br> };<br> ```cpp<br> union currencyDeal {<br>     float price;<br>     int quantity;<br> };<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -1118,7 +1118,7 @@
 		},
 		{
 			id: 97,
-			title: '#### Q96. What will happen if you attempt to call this function with checkConcatThreshold("a");?',
+			title: '# Q96. What will happen if you attempt to call this function with checkConcatThreshold("a");?',
 			text: null,
 			code2: "```cpp<br> int checkConcatThreshold(string a, string b) {<br>     return (a + b).length () > 120;<br> }<br> ",
 			choices: [
@@ -1131,7 +1131,7 @@
 		},
 		{
 			id: 98,
-			title: "#### Q97. You need to define a C++ lambda function. You want the function to have access to only the variables that are local to it. The function should receive a single parameter, and a name, and construct a simple greeting. How will you achieve this?",
+			title: "# Q97. You need to define a C++ lambda function. You want the function to have access to only the variables that are local to it. The function should receive a single parameter, and a name, and construct a simple greeting. How will you achieve this?",
 			text: null,
 			code2: '```cpp<br> auto myVeryFirstLambda = [=] (string name) {<br>         return "Hello " + name + "!";<br>     };<br> ```cpp<br> myVeryFirstLambda = [&] (string name) {<br>         return "Hello " + name + "!";<br>     };<br> ```cpp<br> auto myVeryFirstLambda = [] (string name) {<br>         return "Hello " + name + "!";<br>     };<br> ```cpp<br> myVeryFirstLambda = [] (string name) {<br>         return "Hello " + name + "!";<br>     };<br> ',
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -1139,7 +1139,7 @@
 		},
 		{
 			id: 99,
-			title: "#### Q98. What is the value of X after running this code?",
+			title: "# Q98. What is the value of X after running this code?",
 			text: null,
 			code2: "```cpp<br> int x=10, a=-3;<br> X+=a;<br> ",
 			choices: ["1. -3", "2. 7", "3. 13", "4. 3"],
@@ -1147,7 +1147,7 @@
 		},
 		{
 			id: 100,
-			title: "#### Q99. Once you are done writing to a file, what method will you call on the `ofstream` to notify the operating system?",
+			title: "# Q99. Once you are done writing to a file, what method will you call on the `ofstream` to notify the operating system?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1160,7 +1160,7 @@
 		},
 		{
 			id: 101,
-			title: "#### Q100. Which choice is not a C++ keyword?",
+			title: "# Q100. Which choice is not a C++ keyword?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1173,7 +1173,7 @@
 		},
 		{
 			id: 102,
-			title: "#### Q101. The size_in_bits function seems to take any type of parameter. This can be done by overloading the function, or by letting the compiler take care of it by writing a template. Which choice is an implementation of that template?",
+			title: "# Q101. The size_in_bits function seems to take any type of parameter. This can be done by overloading the function, or by letting the compiler take care of it by writing a template. Which choice is an implementation of that template?",
 			text: null,
 			code2: "```cpp<br> int main()<br> {<br> cout « size_in_bits(21) « endl;<br> cout « size_in_bits('f') « endl;<br> cout « size_in_bits(32.1f) « endl;<br> cout « size_in_bits(32.1) « endl;<br> return 0;<br> }<br> ```cpp<br> template <typename T><br> size_t size_in_bits(const T& a){<br> return sizeof(a)*8;<br> }<br> ```cpp<br> template size_t size_in_bits(const {int,float,double,char,long}& a){<br> return sizeof(a)*8;<br> }<br> ```cpp<br> template <typename T {int,float,double,char,long><br> size_t size_in_bits(const T& a){<br> return sizeof(a)*8;<br> }<br> ```cpp<br> size_t size_in_bits(void * a){<br> return sizeof(a)*8;<br> }<br> ",
 			choices: ["1. A", "2. B", "3. C", "4. D"],
@@ -1181,7 +1181,7 @@
 		},
 		{
 			id: 103,
-			title: "#### Q102. To use the keyboard as input the iostream library is included. To read input from files as input what library is needed?",
+			title: "# Q102. To use the keyboard as input the iostream library is included. To read input from files as input what library is needed?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1194,7 +1194,7 @@
 		},
 		{
 			id: 104,
-			title: "#### Q103. What will this object-oriented program print?",
+			title: "# Q103. What will this object-oriented program print?",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> #include <string><br> using namespace std;<br> <br> class Vehicle {<br> public:<br> \tstring fuel = "none";<br> };<br> <br> class MotorizedVehicle : public Vehicle {<br> public:<br> \tstring fuel = "fossil";<br> };<br> <br> class NextgenMotorizedVehicle : public MotorizedVehicle {<br> public:<br> \tstring fuel = "hydrogen";<br> };<br> <br> int main() {<br> \tMotorizedVehicle aCar;<br> \tcout << aCar.fuel;<br> \treturn 0;<br> }<br> ',
 			choices: ["1. fossil", "2. fossil none", "3. hydrogen", "4. none"],
@@ -1202,7 +1202,7 @@
 		},
 		{
 			id: 105,
-			title: "#### Q104. The program below is handling a stack container. What is the output of running the program?",
+			title: "# Q104. The program below is handling a stack container. What is the output of running the program?",
 			text: null,
 			code2: "```cpp<br> #include <iostream><br> #include <stack><br> <br> int main()<br> {<br> \tstd::stack<int> stack;<br> \tstack.push(1);<br> \tstack.push(2);<br> \tstack.push(3);<br> <br> \tstack.pop();<br> <br> \tstack.push(4);<br> <br> \tstack.top();<br> \tstack.pop();<br> <br> \tstd::cout << stack.top();<br> }<br> ",
 			choices: ["1. 1", "2. 2", "3. 3", "4. 4"],
@@ -1210,7 +1210,7 @@
 		},
 		{
 			id: 106,
-			title: "#### Q105. Which choice is a valid way to overload the ternary conditional operator?",
+			title: "# Q105. Which choice is a valid way to overload the ternary conditional operator?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1223,7 +1223,7 @@
 		},
 		{
 			id: 107,
-			title: "#### Q106. Which class hierarchy represents an example of multilevel inheritance?",
+			title: "# Q106. Which class hierarchy represents an example of multilevel inheritance?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1236,7 +1236,7 @@
 		},
 		{
 			id: 108,
-			title: "#### Q107. Which of the following is the correct syntax to print the message in C++ language?",
+			title: "# Q107. Which of the following is the correct syntax to print the message in C++ language?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1249,7 +1249,7 @@
 		},
 		{
 			id: 109,
-			title: "#### Q108. Consider the following program. What will be the output/error?",
+			title: "# Q108. Consider the following program. What will be the output/error?",
 			text: null,
 			code2: '```cpp<br> #include<iostream><br> #include<algorithm><br> #include<string.h><br> using namespace std;<br> bool compare(char c1, char c2){<br> return tolower(c1) > tolower(c2);    //LINE-1<br> }<br> int main(){<br> char arr1[20] = "C++ Program", arr2[20] = "C Program";<br> cout << lexicographical_compare(arr1, arr1+strlen(arr1), arr2, arr2+strlen(arr2),<br> compare);<br> return 0;<br> }<br> ',
 			choices: [
@@ -1262,7 +1262,7 @@
 		},
 		{
 			id: 110,
-			title: '#### Q109. Consider the following code segment. Fill in the blank at LINE-1 so that the program will print "not found"?',
+			title: '# Q109. Consider the following code segment. Fill in the blank at LINE-1 so that the program will print "not found"?',
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> #include <algorithm><br> using namespace std;<br> int main() {<br> int data[] = {1,2,3,4,5};<br> int key = 5;<br> if(binary_search(__________))    //LINE-1<br> cout << "found";<br> else<br> cout << "not found";<br> return 0;<br> }<br> ',
 			choices: [
@@ -1275,7 +1275,7 @@
 		},
 		{
 			id: 111,
-			title: "#### Q110. Consider the following code segment. What will be the output?",
+			title: "# Q110. Consider the following code segment. What will be the output?",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> #include <algorithm><br> using namespace std;<br> int main () {<br> int data[] = {50, 30, 40, 10, 20};<br> sort (&data[1], &data[4]);<br> for (int i = 0; i < 5; i++)<br> cout << data[i] << " ";<br> return 0;<br> }<br> ',
 			choices: [
@@ -1288,7 +1288,7 @@
 		},
 		{
 			id: 112,
-			title: "#### Q111. Consider the following code segment. What will be the output?",
+			title: "# Q111. Consider the following code segment. What will be the output?",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> #include <algorithm><br> using namespace std;<br> int main() {<br> int element[5];<br> for(int i = 1; i <= 5; i++)<br> *(element + i - 1) = i * 5;<br> rotate(element, element + 4, element + 5);<br> rotate(element, element + 1, element + 4);<br> for (int i = 0; i < 5; ++i)<br> cout << element[i] << " ";<br> return 0;<br> }<br> ',
 			choices: [
@@ -1301,7 +1301,7 @@
 		},
 		{
 			id: 113,
-			title: "#### Q112. Consider the following code segment. What will be the output?",
+			title: "# Q112. Consider the following code segment. What will be the output?",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> #include <vector><br> using namespace std;<br> int main() {<br> const int size = 3, c = 65;<br> vector<char> vc(size, ’A’);<br> for (int i = 1; i <= 2; i++)<br> vc.push_back(65 + i);<br> vc.resize(10, 90);<br> vc.resize(8);<br> for (int i = 0; i < vc.size(); i++)<br> cout << vc[i] << " ";<br> return 0;<br> }<br> ',
 			choices: [
@@ -1314,7 +1314,7 @@
 		},
 		{
 			id: 114,
-			title: "#### Q113. Consider the following code segment. Choose the appropriate option to fill in the blank at LINE-1, such that the output of the code would be: a C++ Program.",
+			title: "# Q113. Consider the following code segment. Choose the appropriate option to fill in the blank at LINE-1, such that the output of the code would be: a C++ Program.",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> #include <string><br> using namespace std;<br> int main(void) {<br> string s1 = "C++ ";<br> string s2 = "Program";<br> __________________;    //LINE-1<br> cout << s1;<br> return 0;<br> }<br> ',
 			choices: [
@@ -1327,7 +1327,7 @@
 		},
 		{
 			id: 115,
-			title: "#### Q114. Consider the following code segment. Fill in the blank at LINE-1 such that the output is 5 2 3 4 5",
+			title: "# Q114. Consider the following code segment. Fill in the blank at LINE-1 such that the output is 5 2 3 4 5",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> #include <algorithm><br> using namespace std;<br> int main() {<br> int data[] = { 1, 2, 3, 4, 5 };<br> for (int i = 0; i < 1; i++) {<br> int j = data[i];<br> replace(data, data + 5, j, *(_________________));    //LINE-1<br> }<br> for (int i = 0; i < 5; ++i)<br> cout << data[i] << " ";<br> return 0;<br> }<br> ',
 			choices: [
@@ -1340,7 +1340,7 @@
 		},
 		{
 			id: 116,
-			title: "#### Q115. Consider the following code segment. What will be the output?",
+			title: "# Q115. Consider the following code segment. What will be the output?",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> #include <cstring><br> #include <stack><br> using namespace std;<br> int main(){<br> char str[10] = "123456789";<br> stack<char> s1, s2;<br> int i;<br> for(i = 0; i < strlen(str)/2; i++)<br> s1.push(str[i]);<br> for(i=i-1; i < strlen(str); i++)<br> s2.push(str[i]);<br> while (!s1.empty()) {<br> s2.push(s1.top()); s1.pop();<br> }<br> while (!s2.empty()) {<br> cout << s2.top(); s2.pop();<br> }<br> return 0;<br> }<br> ',
 			choices: [
@@ -1353,7 +1353,7 @@
 		},
 		{
 			id: 117,
-			title: "#### Q116. Consider the following code segment. Which statement/statements is/are correct?",
+			title: "# Q116. Consider the following code segment. Which statement/statements is/are correct?",
 			text: null,
 			code2: "```cpp<br> int i = 5;<br> const int *p = &i;<br> int * const q = &i;<br> int const *r = &i;<br> int const * const s = &i;<br> *p = 10; //STMT-1<br> *q = 10; //STMT-2<br> *r = 10; //STMT-3<br> *s = 10; //STMT-4<br> ",
 			choices: ["1. STMT-1", "2. STMT-2", "3. STMT-3", "4. STMT-4"],
@@ -1361,7 +1361,7 @@
 		},
 		{
 			id: 118,
-			title: "#### Q117. Consider the following program. What will be the output/error(s)?",
+			title: "# Q117. Consider the following program. What will be the output/error(s)?",
 			text: null,
 			code2: "```cpp<br> #include <iostream><br> using namespace std;<br> char add(char c1 = ’a’) { return c1; }<br> char add(char c1 = ’a’, char c2 = ’b’) { return c1 + c2 - ’a’;}<br> char add(char c1 = ’a’, int d1 = 100){ return c1 + d1 - ’a’; }<br> char add(char c1 = ’a’, char c2 = ’b’, char c3) { return c1 + c2 + c3 - ’a’; }<br> int main() {<br> char c = add(’o’, ’k’);<br> cout << c << endl;<br> return 0;<br> }<br> ",
 			choices: [
@@ -1374,7 +1374,7 @@
 		},
 		{
 			id: 119,
-			title: "#### Q118. Consider the following code segment. What will be the output?",
+			title: "# Q118. Consider the following code segment. What will be the output?",
 			text: null,
 			code2: "```cpp<br> #include <iostream><br> using namespace std;<br> #define SQR(x) (x)*(x)<br> int main() {<br> int a=3;<br> cout << SQR(a++) << endl;<br> return 0;<br> }<br> ",
 			choices: ["1. 12", "2. 25", "3. 9", "4. 16"],
@@ -1382,7 +1382,7 @@
 		},
 		{
 			id: 120,
-			title: "#### Q119. Consider the following code segment. Which line/s will give you an error?",
+			title: "# Q119. Consider the following code segment. Which line/s will give you an error?",
 			text: null,
 			code2: "```cpp<br> #include<iostream><br> #define X 1<br> using namespace std;<br> int main(){<br> int i;<br> const int i1 = 2;<br> const int i2 = i1; //LINE-1<br> i2 = X;<br> i = i1;<br> i1 = i;<br> return 0;<br> //LINE-2<br> //LINE-3<br> //LINE-4<br> }<br> ",
 			choices: ["1. LINE-1", "2. LINE-2", "3. LINE-3", "4. LINE-4"],
@@ -1390,7 +1390,7 @@
 		},
 		{
 			id: 121,
-			title: "#### Q120. Consider the following code segment. What will be the output/error?",
+			title: "# Q120. Consider the following code segment. What will be the output/error?",
 			text: null,
 			code2: '```cpp<br> #include<iostream><br> using namespace std;<br> int main(){<br> int a = 5;<br> int &b = a+1;<br> a = a*b;<br> cout << a << " " << b;<br> return 0;<br> }<br> ',
 			choices: [
@@ -1403,7 +1403,7 @@
 		},
 		{
 			id: 122,
-			title: "#### Q121. Consider the following code segment. What will be the output?",
+			title: "# Q121. Consider the following code segment. What will be the output?",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> using namespace std;<br> int& func(int& i) {     //LINE-1<br> return i = i+5;<br> }<br> int main() {<br> int x = 1, y = 2;<br> int& z = func(x);<br> cout << x << " " << z << " ";<br> func(x) = y;<br> cout << x << " " << z;<br> return 0;<br> }<br> ',
 			choices: ["1. 6 6 2 2", "2. 6 6 7 7", "3. 1 1 2 2", "4. 1 1 7 7"],
@@ -1411,7 +1411,7 @@
 		},
 		{
 			id: 123,
-			title: "#### Q122. Consider the following code segment. Choose the appropriate option to fill in the blanks at LINE-1, such that the output of the code would be: 300 20000.",
+			title: "# Q122. Consider the following code segment. Choose the appropriate option to fill in the blanks at LINE-1, such that the output of the code would be: 300 20000.",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> using namespace std;<br> void compute(int n1, int n2, ________, ________){ //LINE-1<br> n3 = n1 + n2;<br> *n4 = n1 * n2;<br> }<br> int main(){<br> int a = 100, b = 200, c = 0, d = 0;<br> compute(a, b, c, &d); //LINE-2<br> cout << c << ", ";<br> cout << d;<br> return 0;<br> }<br> ',
 			choices: [
@@ -1424,7 +1424,7 @@
 		},
 		{
 			id: 124,
-			title: "#### Q123. Consider the following code segment. What will be the output/error?",
+			title: "# Q123. Consider the following code segment. What will be the output/error?",
 			text: null,
 			code2: "```cpp<br> #include <iostream><br> using namespace std;<br> int main() {<br> int a = 2, *b;<br> *b = 5;<br> int * const ptr;    // LINE-1<br> // LINE-2<br> ptr = b;<br> cout << *ptr;<br> return 0;<br> }<br> ",
 			choices: [
@@ -1437,7 +1437,7 @@
 		},
 		{
 			id: 125,
-			title: "#### Q124. Consider the following code segment. What will be the output/error?",
+			title: "# Q124. Consider the following code segment. What will be the output/error?",
 			text: null,
 			code2: "```cpp<br> #include <iostream><br> using namespace std;<br> void fun(int a = 5) { cout << a << endl; }<br> //LINE-1<br> int fun(int x = 10) { cout << x << endl; return 0; }    //LINE-2<br> int main() {<br> fun();<br> return 0;<br> }<br> ",
 			choices: [
@@ -1450,7 +1450,7 @@
 		},
 		{
 			id: 126,
-			title: "#### Q125. Consider the following code segment. Fill in the blank at LINE-1 such that the program will print 5 + i3",
+			title: "# Q125. Consider the following code segment. Fill in the blank at LINE-1 such that the program will print 5 + i3",
 			text: null,
 			code2: '```cpp<br> #include<iostream><br> using namespace std;<br> struct complex{<br> int re, im;<br> void show(){ cout << re << " + i" << im; }<br> };<br> ______________________________________{ //Line-1<br> c2.re = c1.re+c2.re;<br> c2.im = c1.im+c2.im;<br> return c2;<br> }<br> int main(){<br> struct complex c1={2,5},c2{3,-2};<br> struct complex t = c1 + c2;<br> t.show();<br> return 0;<br> }<br> ',
 			choices: [
@@ -1463,7 +1463,7 @@
 		},
 		{
 			id: 127,
-			title: "#### Q126. Consider the following program. Which line/s will generate an error?",
+			title: "# Q126. Consider the following program. Which line/s will generate an error?",
 			text: null,
 			code2: "```cpp<br> #include<iostream><br> using namespace std;<br> class myClass{<br> int pra = 5;<br> public:<br> int pub = 10;<br> void set_pr(int x){ pra = x; }<br> void set_pu(int x){ pub = x; }<br> };<br> int main(){<br> myClass m;<br> int a, b;<br> a = m.pra; //LINE-1<br> b = m.pub; //LINE-2<br> m.set_pr(100); //LINE-3<br> m.set_pu(200); //LINE-4<br> return 0;<br> }<br> ",
 			choices: ["1. LINE-1", "2. LINE-2", "3. LINE-3", "4. LINE-4"],
@@ -1471,7 +1471,7 @@
 		},
 		{
 			id: 128,
-			title: "#### Q127. Consider the following class. Fill in the blanks with proper access specifiers so that member y can be accessed from outside of the class but member x cannot be accessed.",
+			title: "# Q127. Consider the following class. Fill in the blanks with proper access specifiers so that member y can be accessed from outside of the class but member x cannot be accessed.",
 			text: null,
 			code2: "```cpp<br> class Test{<br> ________:<br> int x;<br> ________:<br> int y;<br> /* Some more code */<br> };<br> ",
 			choices: [
@@ -1484,7 +1484,7 @@
 		},
 		{
 			id: 129,
-			title: "#### Q128. Which C++ Standard did add in-class default member initializers?",
+			title: "# Q128. Which C++ Standard did add in-class default member initializers?",
 			text: null,
 			code2: "",
 			choices: ["1. C++98", "2. C++11", "3. C++14", "4. C++17."],
@@ -1492,7 +1492,7 @@
 		},
 		{
 			id: 130,
-			title: "#### Q129. Can you use auto type deduction for non-static data members?",
+			title: "# Q129. Can you use auto type deduction for non-static data members?",
 			text: null,
 			code2: "",
 			choices: ["1. Yes, since C++11", "2. No", "3. Yes, since C++20"],
@@ -1500,7 +1500,7 @@
 		},
 		{
 			id: 131,
-			title: "#### Q130. Do you need to define a static inline data member in a cpp file?",
+			title: "# Q130. Do you need to define a static inline data member in a cpp file?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1512,7 +1512,7 @@
 		},
 		{
 			id: 132,
-			title: "#### Q131. What's the output of the following code:",
+			title: "# Q131. What's the output of the following code:",
 			text: null,
 			code2: '```cpp<br> struct S {<br>     int a { 10 };<br>     int b { 42 };<br> };<br> S s { 1 };<br> std::cout << s.a << ", " << s.b;<br> ',
 			choices: [
@@ -1524,7 +1524,7 @@
 		},
 		{
 			id: 133,
-			title: "#### Q132. Can a static inline variable be non-constant?",
+			title: "# Q132. Can a static inline variable be non-constant?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1535,7 +1535,7 @@
 		},
 		{
 			id: 134,
-			title: "#### Q133. Consider the following code:",
+			title: "# Q133. Consider the following code:",
 			text: null,
 			code2: "```cpp<br> struct C {<br>     C(int x) : a(x) { }<br>     int a { 10 };<br>     int b { 42 };<br> };<br> C c(0);<br> <br> ",
 			choices: [
@@ -1548,7 +1548,7 @@
 		},
 		{
 			id: 135,
-			title: "#### Q134. What happens when you throw an exception from a constructor?",
+			title: "# Q134. What happens when you throw an exception from a constructor?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1560,7 +1560,7 @@
 		},
 		{
 			id: 136,
-			title: "#### Q135. What happens when you compile this code?",
+			title: "# Q135. What happens when you compile this code?",
 			text: null,
 			code2: '```cpp<br> struct Point { int x; int y; };<br> Point pt {.y = 10, .x = 11 };<br> std::cout << pt.x << ", " << pt.y;<br> ',
 			choices: [
@@ -1572,7 +1572,7 @@
 		},
 		{
 			id: 137,
-			title: "#### Q136. Will this code work in C++11?",
+			title: "# Q136. Will this code work in C++11?",
 			text: null,
 			code2: '```cpp<br> struct User { std::string name = "unknown"; unsigned age { 0 }; };<br> User u { "John", 101 };<br> ',
 			choices: [
@@ -1584,7 +1584,7 @@
 		},
 		{
 			id: 138,
-			title: "#### Q137. Assume you have a std::map<string, int> m;. Select the single true statement about the following loop:",
+			title: "# Q137. Assume you have a std::map<string, int> m;. Select the single true statement about the following loop:",
 			text: null,
 			code2: "```cpp<br> for (const pair<string, int>& elem : m)<br> ",
 			choices: [
@@ -1596,7 +1596,7 @@
 		},
 		{
 			id: 139,
-			title: "#### Q138. Identify the correct extension of the user-defined header file in C++.",
+			title: "# Q138. Identify the correct extension of the user-defined header file in C++.",
 			text: null,
 			code2: "",
 			choices: ["1. .cpp", "2. .hg", "3. .h", "4. .hf"],
@@ -1604,7 +1604,7 @@
 		},
 		{
 			id: 140,
-			title: "#### Q139.Identify the incorrect constructor type.",
+			title: "# Q139.Identify the incorrect constructor type.",
 			text: null,
 			code2: "```cpp<br> auto x = 4000.22;<br> ",
 			choices: [
@@ -1617,7 +1617,7 @@
 		},
 		{
 			id: 141,
-			title: "#### Q140.Which of the following data types is supported in C++ but not in C?",
+			title: "# Q140.Which of the following data types is supported in C++ but not in C?",
 			text: null,
 			code2: "",
 			choices: ["1. bool", "2. int", "3. double", "4. float"],
@@ -1625,7 +1625,7 @@
 		},
 		{
 			id: 142,
-			title: "#### Q141. Identify the correct syntax for declaring arrays in C++.",
+			title: "# Q141. Identify the correct syntax for declaring arrays in C++.",
 			text: null,
 			code2: "",
 			choices: [
@@ -1638,7 +1638,7 @@
 		},
 		{
 			id: 143,
-			title: "#### Q142.Size of wchat_t is.",
+			title: "# Q142.Size of wchat_t is.",
 			text: null,
 			code2: "",
 			choices: [
@@ -1651,7 +1651,7 @@
 		},
 		{
 			id: 144,
-			title: "#### Q143.Which of the following loops is best when we know the number of iterations?",
+			title: "# Q143.Which of the following loops is best when we know the number of iterations?",
 			text: null,
 			code2: "",
 			choices: ["1. while", "2. for", "3. do", "4. All of the above"],
@@ -1659,7 +1659,7 @@
 		},
 		{
 			id: 145,
-			title: "#### Q144.Which keyword is used to define the macros in C++?",
+			title: "# Q144.Which keyword is used to define the macros in C++?",
 			text: null,
 			code2: "",
 			choices: ["1. #macro", "2. #define", "3. macro", "4. keyword"],
@@ -1667,7 +1667,7 @@
 		},
 		{
 			id: 146,
-			title: "#### Q145.Which of the following operators should be preferred to overload as a global function rather than a member method?",
+			title: "# Q145.Which of the following operators should be preferred to overload as a global function rather than a member method?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1680,7 +1680,7 @@
 		},
 		{
 			id: 147,
-			title: "#### Q146.How can we restrict the dynamic allocation of objects of a class using new?",
+			title: "# Q146.How can we restrict the dynamic allocation of objects of a class using new?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1693,7 +1693,7 @@
 		},
 		{
 			id: 148,
-			title: "#### Q147.What is the time complexity of the below code?",
+			title: "# Q147.What is the time complexity of the below code?",
 			text: null,
 			code2: '```cpp<br> for(int i=0;i<n;i++){<br>    for(int j=0;j<n;j++){<br>        cout<<"hello";<br>     }<br> }<br> ',
 			choices: ["1. O(n^3)", "2. O(n^2)", "3. O(n)", "4. O(1)"],
@@ -1701,7 +1701,7 @@
 		},
 		{
 			id: 149,
-			title: "#### Q148.What is the output of the code given below?",
+			title: "# Q148.What is the output of the code given below?",
 			text: null,
 			code2: "```cpp<br> int a=10;<br> int k=++a;<br> int m=a++;<br> cout<<k+m;<br> ",
 			choices: ["1. 20", "2. 21", "3. 22", "4. 23"],
@@ -1709,7 +1709,7 @@
 		},
 		{
 			id: 150,
-			title: "#### Q149. Which C++ construct is used for exception handling?",
+			title: "# Q149. Which C++ construct is used for exception handling?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1722,7 +1722,7 @@
 		},
 		{
 			id: 151,
-			title: "#### Q150. What is the purpose of the `break` statement in a loop in C++?",
+			title: "# Q150. What is the purpose of the `break` statement in a loop in C++?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1735,7 +1735,7 @@
 		},
 		{
 			id: 152,
-			title: "#### Q151. In C++, what is the purpose of the `const` keyword when used with a variable?",
+			title: "# Q151. In C++, what is the purpose of the `const` keyword when used with a variable?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1748,7 +1748,7 @@
 		},
 		{
 			id: 153,
-			title: "#### Q152. Which is more effective while calling the C++ functions??",
+			title: "# Q152. Which is more effective while calling the C++ functions??",
 			text: null,
 			code2: "",
 			choices: [
@@ -1761,7 +1761,7 @@
 		},
 		{
 			id: 154,
-			title: "#### Q153. What will be the output of the following C++ program?",
+			title: "# Q153. What will be the output of the following C++ program?",
 			text: null,
 			code2: '```cpp<br> #include <iostream><br> using namespace std;<br> class A{<br> public:<br> \tA(){<br> \t\tcout<<"Constructor called<br> ";<br> \t   }<br> \t~A(){<br> \t\tcout<<"Destructor called<br> ";<br> \t    }<br> };<br> int main(int argc, char const *argv[])<br> {<br> \tA *a = new A[5];<br> \tdelete[] a;<br> \treturn 0;<br> }<br> ',
 			choices: [
@@ -1774,7 +1774,7 @@
 		},
 		{
 			id: 155,
-			title: "#### Q.154 What is the output of this code?",
+			title: "# Q.154 What is the output of this code?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1787,7 +1787,7 @@
 		},
 		{
 			id: 156,
-			title: "#### Q.155 Which choice is _not_ related to declaring the member variable count as static in my_class?",
+			title: "# Q.155 Which choice is _not_ related to declaring the member variable count as static in my_class?",
 			text: null,
 			code2: "```cpp<br> class my_class{<br>     public: static int count;<br> }<br> ",
 			choices: [
@@ -1800,7 +1800,7 @@
 		},
 		{
 			id: 157,
-			title: "#### Q156. What is the purpose of the `constexpr` keyword in C++?",
+			title: "# Q156. What is the purpose of the `constexpr` keyword in C++?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1813,7 +1813,7 @@
 		},
 		{
 			id: 158,
-			title: "#### Q157. What is a template metaprogram in C++?",
+			title: "# Q157. What is a template metaprogram in C++?",
 			text: null,
 			code2: "",
 			choices: [
@@ -1826,7 +1826,7 @@
 		},
 		{
 			id: 159,
-			title: "#### Q158.Identify the correct example for a pre-increment operator.",
+			title: "# Q158.Identify the correct example for a pre-increment operator.",
 			text: null,
 			code2: "",
 			choices: ["1. ++i", "2. i++", "3. --i", "4. +i"],
@@ -1834,7 +1834,7 @@
 		},
 		{
 			id: 160,
-			title: "#### Q159. What will be the output of following code?",
+			title: "# Q159. What will be the output of following code?",
 			text: null,
 			code2: "```cpp<br> {% raw %}<br> int matrix[3][3] = {{1, 2, 3},{4, 5, 6},{7, 8, 9}};<br> for(int i=0;i<3;i++){<br>     for(int j=0;j<3;j++){<br>         int a = mat[i][j];<br>         mat[i][j] = mat[j][i];<br>         mat[j][i] = a;<br>     }<br> }<br> {% endraw %}<br> ",
 			choices: [
@@ -1851,9 +1851,9 @@
    let ds = [
 		{
 			id: 1,
-			title: "#### Q1. Which data structure is used to implement a stack?",
+			title: "# Q1. Which data structure is used to implement a stack?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Linked List",
 				"2. Array",
@@ -1864,9 +1864,9 @@
 		},
 		{
 			id: 2,
-			title: "#### Q2. Which data structure is used to implement a queue?",
+			title: "# Q2. Which data structure is used to implement a queue?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Linked List",
 				"2. Array",
@@ -1877,402 +1877,402 @@
 		},
 		{
 			id: 3,
-			title: "#### Q3. What is the time complexity of searching an element in a sorted array using binary search?",
+			title: "# Q3. What is the time complexity of searching an element in a sorted array using binary search?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(log n)", "3. O(n log n)", "4. O(1)"],
 			answer: "2. O(log n)",
 		},
 		{
 			id: 4,
-			title: "#### Q4. What is the time complexity of inserting an element at the beginning of a linked list?",
+			title: "# Q4. What is the time complexity of inserting an element at the beginning of a linked list?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 5,
-			title: "#### Q5. What is the time complexity of deleting an element from the end of a linked list?",
+			title: "# Q5. What is the time complexity of deleting an element from the end of a linked list?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 6,
-			title: "#### Q6. What is the time complexity of inserting an element at the end of a queue implemented using an array?",
+			title: "# Q6. What is the time complexity of inserting an element at the end of a queue implemented using an array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 7,
-			title: "#### Q7. What is the time complexity of deleting an element from the front of a queue implemented using an array?",
+			title: "# Q7. What is the time complexity of deleting an element from the front of a queue implemented using an array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 8,
-			title: "#### Q8. What is the time complexity of inserting an element at the beginning of a stack implemented using a linked list?",
+			title: "# Q8. What is the time complexity of inserting an element at the beginning of a stack implemented using a linked list?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 9,
-			title: "#### Q9. What is the time complexity of deleting an element from the top of a stack implemented using a linked list?",
+			title: "# Q9. What is the time complexity of deleting an element from the top of a stack implemented using a linked list?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 10,
-			title: "#### Q10. What is the time complexity of finding the minimum element in a min-heap?",
+			title: "# Q10. What is the time complexity of finding the minimum element in a min-heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 11,
-			title: "#### Q11. What is the time complexity of inserting an element into a min-heap?",
+			title: "# Q11. What is the time complexity of inserting an element into a min-heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "3. O(log n)",
 		},
 		{
 			id: 12,
-			title: "#### Q12. What is the time complexity of deleting an element from a min-heap?",
+			title: "# Q12. What is the time complexity of deleting an element from a min-heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "3. O(log n)",
 		},
 		{
 			id: 13,
-			title: "#### Q13. What is the time complexity of searching for an element in a binary search tree?",
+			title: "# Q13. What is the time complexity of searching for an element in a binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "3. O(log n)",
 		},
 		{
 			id: 14,
-			title: "#### Q14. What is the time complexity of inserting an element into a binary search tree?",
+			title: "# Q14. What is the time complexity of inserting an element into a binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "3. O(log n)",
 		},
 		{
 			id: 15,
-			title: "#### Q15. What is the time complexity of deleting an element from a binary search tree?",
+			title: "# Q15. What is the time complexity of deleting an element from a binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "3. O(log n)",
 		},
 		{
 			id: 16,
-			title: "#### Q16. What is the time complexity of finding the maximum element in a binary search tree?",
+			title: "# Q16. What is the time complexity of finding the maximum element in a binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 17,
-			title: "#### Q17. What is the time complexity of finding the minimum element in a binary search tree?",
+			title: "# Q17. What is the time complexity of finding the minimum element in a binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 18,
-			title: "#### Q18. What is the time complexity of traversing a binary search tree in inorder?",
+			title: "# Q18. What is the time complexity of traversing a binary search tree in inorder?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 19,
-			title: "#### Q19. What is the time complexity of traversing a binary search tree in preorder?",
+			title: "# Q19. What is the time complexity of traversing a binary search tree in preorder?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 20,
-			title: "#### Q20. What is the time complexity of traversing a binary search tree in postorder?",
+			title: "# Q20. What is the time complexity of traversing a binary search tree in postorder?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 21,
-			title: "#### Q21. What is the time complexity of finding the depth of a binary tree?",
+			title: "# Q21. What is the time complexity of finding the depth of a binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 22,
-			title: "#### Q22. What is the time complexity of finding the height of a binary tree?",
+			title: "# Q22. What is the time complexity of finding the height of a binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 23,
-			title: "#### Q23. What is the time complexity of finding the diameter of a binary tree?",
+			title: "# Q23. What is the time complexity of finding the diameter of a binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 24,
-			title: "#### Q24. What is the time complexity of finding the sum of all nodes in a binary tree?",
+			title: "# Q24. What is the time complexity of finding the sum of all nodes in a binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 25,
-			title: "#### Q25. What is the time complexity of finding the number of nodes in a binary tree?",
+			title: "# Q25. What is the time complexity of finding the number of nodes in a binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 26,
-			title: "#### Q26. What is the time complexity of finding the level of a node in a binary tree?",
+			title: "# Q26. What is the time complexity of finding the level of a node in a binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 27,
-			title: "#### Q27. What is the time complexity of finding the least common ancestor (LCA) of two nodes in a binary tree?",
+			title: "# Q27. What is the time complexity of finding the least common ancestor (LCA) of two nodes in a binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 28,
-			title: "#### Q28. What is the time complexity of checking if a binary tree is balanced?",
+			title: "# Q28. What is the time complexity of checking if a binary tree is balanced?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 29,
-			title: "#### Q29. What is the time complexity of checking if a binary tree is a binary search tree?",
+			title: "# Q29. What is the time complexity of checking if a binary tree is a binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 30,
-			title: "#### Q30. What is the time complexity of checking if a binary tree is a complete binary tree?",
+			title: "# Q30. What is the time complexity of checking if a binary tree is a complete binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 31,
-			title: "#### Q31. What is the time complexity of finding the maximum element in a heap?",
+			title: "# Q31. What is the time complexity of finding the maximum element in a heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 32,
-			title: "#### Q32. What is the time complexity of finding the minimum element in a heap?",
+			title: "# Q32. What is the time complexity of finding the minimum element in a heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 33,
-			title: "#### Q33. What is the time complexity of inserting an element into a heap?",
+			title: "# Q33. What is the time complexity of inserting an element into a heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "3. O(log n)",
 		},
 		{
 			id: 34,
-			title: "#### Q34. What is the time complexity of deleting an element from a heap?",
+			title: "# Q34. What is the time complexity of deleting an element from a heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "3. O(log n)",
 		},
 		{
 			id: 35,
-			title: "#### Q35. What is the time complexity of sorting an array using merge sort?",
+			title: "# Q35. What is the time complexity of sorting an array using merge sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "2. O(n log n)",
 		},
 		{
 			id: 36,
-			title: "#### Q36. What is the time complexity of sorting an array using quick sort?",
+			title: "# Q36. What is the time complexity of sorting an array using quick sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "2. O(n log n)",
 		},
 		{
 			id: 37,
-			title: "#### Q37. What is the time complexity of sorting an array using insertion sort?",
+			title: "# Q37. What is the time complexity of sorting an array using insertion sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "3. O(n^2)",
 		},
 		{
 			id: 38,
-			title: "#### Q38. What is the time complexity of sorting an array using bubble sort?",
+			title: "# Q38. What is the time complexity of sorting an array using bubble sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "3. O(n^2)",
 		},
 		{
 			id: 39,
-			title: "#### Q39. What is the time complexity of sorting an array using selection sort?",
+			title: "# Q39. What is the time complexity of sorting an array using selection sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "3. O(n^2)",
 		},
 		{
 			id: 40,
-			title: "#### Q40. What is the time complexity of finding the kth smallest element in an unsorted array using the quick select algorithm?",
+			title: "# Q40. What is the time complexity of finding the kth smallest element in an unsorted array using the quick select algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 41,
-			title: "#### Q41. What is the time complexity of finding the kth smallest element in a sorted array?",
+			title: "# Q41. What is the time complexity of finding the kth smallest element in a sorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 42,
-			title: "#### Q42. What is the time complexity of finding the median of an unsorted array?",
+			title: "# Q42. What is the time complexity of finding the median of an unsorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 43,
-			title: "#### Q43. What is the time complexity of finding the median of a sorted array?",
+			title: "# Q43. What is the time complexity of finding the median of a sorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 44,
-			title: "#### Q44. What is the time complexity of finding the mode of an unsorted array?",
+			title: "# Q44. What is the time complexity of finding the mode of an unsorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 45,
-			title: "#### Q45. What is the time complexity of finding the mode of a sorted array?",
+			title: "# Q45. What is the time complexity of finding the mode of a sorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 46,
-			title: "#### Q46. What is the time complexity of finding the range of an unsorted array?",
+			title: "# Q46. What is the time complexity of finding the range of an unsorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 47,
-			title: "#### Q47. What is the time complexity of finding the range of a sorted array?",
+			title: "# Q47. What is the time complexity of finding the range of a sorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 48,
-			title: "#### Q48. What is the time complexity of finding the sum of all elements in an unsorted array?",
+			title: "# Q48. What is the time complexity of finding the sum of all elements in an unsorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 49,
-			title: "#### Q49. What is the time complexity of finding the sum of all elements in a sorted array?",
+			title: "# Q49. What is the time complexity of finding the sum of all elements in a sorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 		{
 			id: 50,
-			title: "#### Q50. What is the time complexity of finding the average of all elements in an unsorted array?",
+			title: "# Q50. What is the time complexity of finding the average of all elements in an unsorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 		},
 
 		{
 			id: 51,
-			title: "#### Q51. Which of the following is NOT a valid data structure?",
+			title: "# Q51. Which of the following is NOT a valid data structure?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. Queue", "2. Stack", "3. Heap", "4. Loop"],
 			answer: "4. Loop",
 		},
 		{
 			id: 52,
-			title: "#### Q52. What is the primary difference between a stack and a queue?",
+			title: "# Q52. What is the primary difference between a stack and a queue?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Stacks are LIFO, queues are FIFO.",
 				"2. Stacks are FIFO, queues are LIFO.",
@@ -2283,9 +2283,9 @@
 		},
 		{
 			id: 53,
-			title: "#### Q53. Which of the following is an advantage of using a linked list over an array?",
+			title: "# Q53. Which of the following is an advantage of using a linked list over an array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Faster insertion and deletion at arbitrary positions.",
 				"2. More efficient memory usage.",
@@ -2296,17 +2296,17 @@
 		},
 		{
 			id: 54,
-			title: "#### Q54. What is the time complexity of accessing the kth element in an array?",
+			title: "# Q54. What is the time complexity of accessing the kth element in an array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 		},
 		{
 			id: 55,
-			title: "#### Q55. Which of the following is NOT a sorting algorithm?",
+			title: "# Q55. Which of the following is NOT a sorting algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Merge Sort",
 				"2. Quick Sort",
@@ -2317,9 +2317,9 @@
 		},
 		{
 			id: 56,
-			title: "#### Q56. Which sorting algorithm is generally considered the most efficient for large datasets?",
+			title: "# Q56. Which sorting algorithm is generally considered the most efficient for large datasets?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Bubble Sort",
 				"2. Insertion Sort",
@@ -2330,25 +2330,25 @@
 		},
 		{
 			id: 57,
-			title: "#### Q57. What is the time complexity of the best-case scenario for Quick Sort?",
+			title: "# Q57. What is the time complexity of the best-case scenario for Quick Sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "2. O(n log n)",
 		},
 		{
 			id: 58,
-			title: "#### Q58. What is the worst-case time complexity of Heap Sort?",
+			title: "# Q58. What is the worst-case time complexity of Heap Sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)"],
 		},
 
 		{
 			id: 51,
-			title: "#### Q51. Which of the following is NOT a valid data structure?",
+			title: "# Q51. Which of the following is NOT a valid data structure?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. Queue", "2. Stack", "3. Heap", "4. Loop"],
 			answer: "4. Loop",
 			solution:
@@ -2356,9 +2356,9 @@
 		},
 		{
 			id: 52,
-			title: "#### Q52. What is the primary difference between a stack and a queue?",
+			title: "# Q52. What is the primary difference between a stack and a queue?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Stacks are LIFO, queues are FIFO.",
 				"2. Stacks are FIFO, queues are LIFO.",
@@ -2371,9 +2371,9 @@
 		},
 		{
 			id: 53,
-			title: "#### Q53. Which of the following is an advantage of using a linked list over an array?",
+			title: "# Q53. Which of the following is an advantage of using a linked list over an array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Faster insertion and deletion at arbitrary positions.",
 				"2. More efficient memory usage.",
@@ -2386,9 +2386,9 @@
 		},
 		{
 			id: 54,
-			title: "#### Q54. What is the time complexity of accessing the kth element in an array?",
+			title: "# Q54. What is the time complexity of accessing the kth element in an array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 			solution:
@@ -2396,9 +2396,9 @@
 		},
 		{
 			id: 55,
-			title: "#### Q55. Which of the following is NOT a sorting algorithm?",
+			title: "# Q55. Which of the following is NOT a sorting algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Merge Sort",
 				"2. Quick Sort",
@@ -2411,9 +2411,9 @@
 		},
 		{
 			id: 56,
-			title: "#### Q56. Which sorting algorithm is generally considered the most efficient for large datasets?",
+			title: "# Q56. Which sorting algorithm is generally considered the most efficient for large datasets?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Bubble Sort",
 				"2. Insertion Sort",
@@ -2426,9 +2426,9 @@
 		},
 		{
 			id: 57,
-			title: "#### Q57. What is the time complexity of the best-case scenario for Quick Sort?",
+			title: "# Q57. What is the time complexity of the best-case scenario for Quick Sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "2. O(n log n)",
 			solution:
@@ -2436,9 +2436,9 @@
 		},
 		{
 			id: 58,
-			title: "#### Q58. What is the worst-case time complexity of Heap Sort?",
+			title: "# Q58. What is the worst-case time complexity of Heap Sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(n^3)"],
 			answer: "2. O(n log n)",
 			solution:
@@ -2446,9 +2446,9 @@
 		},
 		{
 			id: 59,
-			title: "#### Q59. Which data structure is used in the implementation of a priority queue?",
+			title: "# Q59. Which data structure is used in the implementation of a priority queue?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. Linked List", "2. Array", "3. Heap", "4. Stack"],
 			answer: "3. Heap",
 			solution:
@@ -2456,9 +2456,9 @@
 		},
 		{
 			id: 60,
-			title: "#### Q60. What is the time complexity of searching for an element in a hash table?",
+			title: "# Q60. What is the time complexity of searching for an element in a hash table?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 			solution:
@@ -2466,9 +2466,9 @@
 		},
 		{
 			id: 61,
-			title: "#### Q61. What is a hash function?",
+			title: "# Q61. What is a hash function?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. A function that generates a unique key for each element.",
 				"2. A function that sorts elements in ascending order.",
@@ -2481,9 +2481,9 @@
 		},
 		{
 			id: 62,
-			title: "#### Q62. What is a collision in a hash table?",
+			title: "# Q62. What is a collision in a hash table?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. When two different elements map to the same hash value.",
 				"2. When a hash function fails to generate a unique key.",
@@ -2496,9 +2496,9 @@
 		},
 		{
 			id: 63,
-			title: "#### Q63. What is a graph?",
+			title: "# Q63. What is a graph?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. A data structure that represents a hierarchical relationship between elements.",
 				"2. A data structure that represents a network of interconnected nodes.",
@@ -2511,9 +2511,9 @@
 		},
 		{
 			id: 64,
-			title: "#### Q64. What is a tree?",
+			title: "# Q64. What is a tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. A data structure that represents a network of interconnected nodes.",
 				"2. A data structure that represents a hierarchical relationship between elements.",
@@ -2526,9 +2526,9 @@
 		},
 		{
 			id: 65,
-			title: "#### Q65. What is the difference between a directed graph and an undirected graph?",
+			title: "# Q65. What is the difference between a directed graph and an undirected graph?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Directed graphs have edges with a specific direction, while undirected graphs do not.",
 				"2. Undirected graphs have edges with a specific direction, while directed graphs do not.",
@@ -2541,9 +2541,9 @@
 		},
 		{
 			id: 66,
-			title: "#### Q66. What is a binary tree?",
+			title: "# Q66. What is a binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. A tree where each node can have at most two child nodes.",
 				"2. A tree where each node can have at most one child node.",
@@ -2556,9 +2556,9 @@
 		},
 		{
 			id: 67,
-			title: "#### Q67. What is a complete binary tree?",
+			title: "# Q67. What is a complete binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. A binary tree where all levels are completely filled except possibly the last level.",
 				"2. A binary tree where all levels are completely filled.",
@@ -2571,9 +2571,9 @@
 		},
 		{
 			id: 68,
-			title: "#### Q68. What is a perfect binary tree?",
+			title: "# Q68. What is a perfect binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. A binary tree where all levels are completely filled.",
 				"2. A binary tree where all levels are completely filled except possibly the last level.",
@@ -2586,9 +2586,9 @@
 		},
 		{
 			id: 69,
-			title: "#### Q69. What is a balanced binary tree?",
+			title: "# Q69. What is a balanced binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. A binary tree where the left and right subtrees have the same height.",
 				"2. A binary tree where the left subtree is a balanced binary tree and the right subtree is a balanced binary tree.",
@@ -2601,9 +2601,9 @@
 		},
 		{
 			id: 70,
-			title: "#### Q70. What is the purpose of a self-balancing binary search tree?",
+			title: "# Q70. What is the purpose of a self-balancing binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. To ensure that the tree is always balanced, even after insertions and deletions.",
 				"2. To improve the efficiency of search operations.",
@@ -2616,9 +2616,9 @@
 		},
 		{
 			id: 71,
-			title: "#### Q71. Which of the following is NOT a self-balancing binary search tree?",
+			title: "# Q71. Which of the following is NOT a self-balancing binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. AVL Tree",
 				"2. Red-Black Tree",
@@ -2631,9 +2631,9 @@
 		},
 		{
 			id: 72,
-			title: "#### Q72. What is the purpose of a trie?",
+			title: "# Q72. What is the purpose of a trie?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. To efficiently store and retrieve strings.",
 				"2. To sort elements in alphabetical order.",
@@ -2647,9 +2647,9 @@
 
 		{
 			id: 74,
-			title: "#### Q74. What is the time complexity of the union operation in a disjoint set data structure?",
+			title: "# Q74. What is the time complexity of the union operation in a disjoint set data structure?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "3. O(log n)",
 			solution:
@@ -2657,9 +2657,9 @@
 		},
 		{
 			id: 75,
-			title: "#### Q75. What is the time complexity of the find operation in a disjoint set data structure?",
+			title: "# Q75. What is the time complexity of the find operation in a disjoint set data structure?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "3. O(log n)",
 			solution:
@@ -2667,9 +2667,9 @@
 		},
 		{
 			id: 76,
-			title: "#### Q76. Which data structure is used to represent a game tree in artificial intelligence?",
+			title: "# Q76. Which data structure is used to represent a game tree in artificial intelligence?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. Stack", "2. Queue", "3. Heap", "4. Tree"],
 			answer: "4. Tree",
 			solution:
@@ -2677,9 +2677,9 @@
 		},
 		{
 			id: 77,
-			title: "#### Q77. What is the purpose of a breadth-first search (BFS) algorithm?",
+			title: "# Q77. What is the purpose of a breadth-first search (BFS) algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. To find the shortest path between two nodes in a graph.",
 				"2. To find the maximum element in a graph.",
@@ -2692,9 +2692,9 @@
 		},
 		{
 			id: 78,
-			title: "#### Q78. What is the purpose of a depth-first search (DFS) algorithm?",
+			title: "# Q78. What is the purpose of a depth-first search (DFS) algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. To find the shortest path between two nodes in a graph.",
 				"2. To find all reachable nodes from a given source node.",
@@ -2707,9 +2707,9 @@
 		},
 		{
 			id: 79,
-			title: "#### Q79. What is the time complexity of a breadth-first search (BFS) algorithm?",
+			title: "# Q79. What is the time complexity of a breadth-first search (BFS) algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(V+E)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(V+E)",
 			solution:
@@ -2717,9 +2717,9 @@
 		},
 		{
 			id: 80,
-			title: "#### Q80. What is the time complexity of a depth-first search (DFS) algorithm?",
+			title: "# Q80. What is the time complexity of a depth-first search (DFS) algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(V+E)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(V+E)",
 			solution:
@@ -2727,9 +2727,9 @@
 		},
 		{
 			id: 81,
-			title: "#### Q81. What is Dijkstra's algorithm?",
+			title: "# Q81. What is Dijkstra's algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. A graph traversal algorithm.",
 				"2. A sorting algorithm.",
@@ -2742,9 +2742,9 @@
 		},
 		{
 			id: 82,
-			title: "#### Q82. What is the time complexity of Dijkstra's algorithm?",
+			title: "# Q82. What is the time complexity of Dijkstra's algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(V+E)", "3. O(V log V)", "4. O(n log n)"],
 			answer: "3. O(V log V)",
 			solution:
@@ -2752,9 +2752,9 @@
 		},
 		{
 			id: 83,
-			title: "#### Q83. What is the purpose of Kruskal's algorithm?",
+			title: "# Q83. What is the purpose of Kruskal's algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. To find the shortest path between two nodes in a graph.",
 				"2. To find the minimum spanning tree of a graph.",
@@ -2767,9 +2767,9 @@
 		},
 		{
 			id: 84,
-			title: "#### Q84. What is the time complexity of Kruskal's algorithm?",
+			title: "# Q84. What is the time complexity of Kruskal's algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(V+E)", "3. O(E log E)", "4. O(n log n)"],
 			answer: "3. O(E log E)",
 			solution:
@@ -2777,9 +2777,9 @@
 		},
 		{
 			id: 85,
-			title: "#### Q85. What is the purpose of Prim's algorithm?",
+			title: "# Q85. What is the purpose of Prim's algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. To find the shortest path between two nodes in a graph.",
 				"2. To find the minimum spanning tree of a graph.",
@@ -2792,9 +2792,9 @@
 		},
 		{
 			id: 86,
-			title: "#### Q86. What is the time complexity of Prim's algorithm?",
+			title: "# Q86. What is the time complexity of Prim's algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(V+E)", "3. O(E log E)", "4. O(V log V)"],
 			answer: "4. O(V log V)",
 			solution:
@@ -2802,9 +2802,9 @@
 		},
 		{
 			id: 87,
-			title: "#### Q87. What is the difference between Kruskal's algorithm and Prim's algorithm?",
+			title: "# Q87. What is the difference between Kruskal's algorithm and Prim's algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Kruskal's algorithm uses a disjoint set data structure, while Prim's algorithm uses a priority queue.",
 				"2. Kruskal's algorithm starts with a single node and adds edges iteratively, while Prim's algorithm starts with a single edge and adds nodes iteratively.",
@@ -2817,9 +2817,9 @@
 		},
 		{
 			id: 88,
-			title: "#### Q88. What is a topological sort?",
+			title: "# Q88. What is a topological sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. A sorting algorithm for directed graphs.",
 				"2. A graph traversal algorithm.",
@@ -2832,9 +2832,9 @@
 		},
 		{
 			id: 89,
-			title: "#### Q89. What is the time complexity of a topological sort algorithm?",
+			title: "# Q89. What is the time complexity of a topological sort algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(V+E)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(V+E)",
 			solution:
@@ -2842,9 +2842,9 @@
 		},
 		{
 			id: 90,
-			title: "#### Q90. What is the purpose of a dynamic programming algorithm?",
+			title: "# Q90. What is the purpose of a dynamic programming algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. To solve problems by breaking them down into smaller overlapping subproblems and storing the solutions to these subproblems.",
 				"2. To sort elements in alphabetical order.",
@@ -2857,9 +2857,9 @@
 		},
 		{
 			id: 91,
-			title: "#### Q91. Which of the following is NOT a dynamic programming problem?",
+			title: "# Q91. Which of the following is NOT a dynamic programming problem?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Fibonacci sequence",
 				"2. Knapsack problem",
@@ -2873,7 +2873,7 @@
 
 		{
 			id: 92,
-			title: "#### Q92. Given a sorted array, return the index of the first occurrence of a target value.",
+			title: "# Q92. Given a sorted array, return the index of the first occurrence of a target value.",
 			text: null,
 			code2: "```cpp<br>int firstOccurrence(vector<int>& nums, int target) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -2888,7 +2888,7 @@
 		},
 		{
 			id: 93,
-			title: "#### Q93. Reverse a linked list in-place.",
+			title: "# Q93. Reverse a linked list in-place.",
 			text: null,
 			code2: "```cpp<br>struct ListNode {<br>  int val;<br>  ListNode *next;<br>  ListNode() : val(0), next(nullptr) {}<br>  ListNode(int x) : val(x), next(nullptr) {}<br>  ListNode(int x, ListNode *next) : val(x), next(next) {}<br>};<br><br>ListNode* reverseList(ListNode* head) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -2903,7 +2903,7 @@
 		},
 		{
 			id: 94,
-			title: "#### Q94. Find the middle node of a linked list.",
+			title: "# Q94. Find the middle node of a linked list.",
 			text: null,
 			code2: "```cpp<br>struct ListNode {<br>  int val;<br>  ListNode *next;<br>  ListNode() : val(0), next(nullptr) {}<br>  ListNode(int x) : val(x), next(nullptr) {}<br>  ListNode(int x, ListNode *next) : val(x), next(next) {}<br>};<br><br>ListNode* middleNode(ListNode* head) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -2918,7 +2918,7 @@
 		},
 		{
 			id: 95,
-			title: "#### Q95. Given an array of integers, find the two numbers that add up to a given target.",
+			title: "# Q95. Given an array of integers, find the two numbers that add up to a given target.",
 			text: null,
 			code2: "```cpp<br>vector<int> twoSum(vector<int>& nums, int target) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -2933,7 +2933,7 @@
 		},
 		{
 			id: 96,
-			title: "#### Q96. Given a binary tree, check if it is a valid binary search tree.",
+			title: "# Q96. Given a binary tree, check if it is a valid binary search tree.",
 			text: null,
 			code2: "```cpp<br>struct TreeNode {<br>  int val;<br>  TreeNode *left;<br>  TreeNode *right;<br>  TreeNode() : val(0), left(nullptr), right(nullptr) {}<br>  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}<br>  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}<br>};<br><br>bool isValidBST(TreeNode* root) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -2948,7 +2948,7 @@
 		},
 		{
 			id: 97,
-			title: "#### Q97. Given a string, check if it is a palindrome.",
+			title: "# Q97. Given a string, check if it is a palindrome.",
 			text: null,
 			code2: "```cpp<br>bool isPalindrome(string s) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -2963,7 +2963,7 @@
 		},
 		{
 			id: 98,
-			title: "#### Q98. Given a string, find the length of the longest substring without repeating characters.",
+			title: "# Q98. Given a string, find the length of the longest substring without repeating characters.",
 			text: null,
 			code2: "```cpp<br>int lengthOfLongestSubstring(string s) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -2978,7 +2978,7 @@
 		},
 		{
 			id: 99,
-			title: "#### Q99. Given a string, check if it is a valid parentheses string.",
+			title: "# Q99. Given a string, check if it is a valid parentheses string.",
 			text: null,
 			code2: "```cpp<br>bool isValidParentheses(string s) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -2993,7 +2993,7 @@
 		},
 		{
 			id: 100,
-			title: "#### Q100. Given a sorted array, remove duplicates in-place.",
+			title: "# Q100. Given a sorted array, remove duplicates in-place.",
 			text: null,
 			code2: "```cpp<br>int removeDuplicates(vector<int>& nums) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -3008,7 +3008,7 @@
 		},
 		{
 			id: 101,
-			title: "#### Q101. Implement the `maxDepth` function for a binary tree.",
+			title: "# Q101. Implement the `maxDepth` function for a binary tree.",
 			text: null,
 			code2: "```cpp<br>struct TreeNode {<br>  int val;<br>  TreeNode *left;<br>  TreeNode *right;<br>  TreeNode() : val(0), left(nullptr), right(nullptr) {}<br>  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}<br>  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}<br>};<br><br>int maxDepth(TreeNode* root) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -3023,7 +3023,7 @@
 		},
 		{
 			id: 102,
-			title: "#### Q102. Given a string, find the first non-repeating character.",
+			title: "# Q102. Given a string, find the first non-repeating character.",
 			text: null,
 			code2: "```cpp<br>char firstNonRepeatingChar(string s) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -3038,7 +3038,7 @@
 		},
 		{
 			id: 103,
-			title: "#### Q103. Given a sorted array and a target value, find the index of the target value if it exists, otherwise return -1.",
+			title: "# Q103. Given a sorted array and a target value, find the index of the target value if it exists, otherwise return -1.",
 			text: null,
 			code2: "```cpp<br>int search(vector<int>& nums, int target) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -3053,7 +3053,7 @@
 		},
 		{
 			id: 104,
-			title: "#### Q104. Given a sorted array, find the peak element (an element that is greater than its neighbors).",
+			title: "# Q104. Given a sorted array, find the peak element (an element that is greater than its neighbors).",
 			text: null,
 			code2: "```cpp<br>int findPeakElement(vector<int>& nums) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -3068,7 +3068,7 @@
 		},
 		{
 			id: 105,
-			title: "#### Q105. Given a string, check if it is a valid anagram of another string.",
+			title: "# Q105. Given a string, check if it is a valid anagram of another string.",
 			text: null,
 			code2: "```cpp<br>bool isAnagram(string s, string t) {<br>  // Implement the logic here<br>}<br>```",
 			choices: [
@@ -3084,9 +3084,9 @@
 
 		{
 			id: 107,
-			title: "#### Q107. What is the primary use case for a hash table?",
+			title: "# Q107. What is the primary use case for a hash table?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Sorting data in ascending order",
 				"2. Implementing a stack data structure",
@@ -3099,9 +3099,9 @@
 		},
 		{
 			id: 108,
-			title: "#### Q108. Which data structure is best suited for implementing a Last-In, First-Out (LIFO) behavior?",
+			title: "# Q108. Which data structure is best suited for implementing a Last-In, First-Out (LIFO) behavior?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. Queue", "2. Stack", "3. Heap", "4. Tree"],
 			answer: "2. Stack",
 			solution:
@@ -3109,9 +3109,9 @@
 		},
 		{
 			id: 109,
-			title: "#### Q109. What is the time complexity of inserting an element into a binary search tree?",
+			title: "# Q109. What is the time complexity of inserting an element into a binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(log n)", "3. O(1)", "4. O(n log n)"],
 			answer: "2. O(log n)",
 			solution:
@@ -3119,9 +3119,9 @@
 		},
 		{
 			id: 110,
-			title: "#### Q110. What is the purpose of a priority queue?",
+			title: "# Q110. What is the purpose of a priority queue?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Storing elements in a specific order based on their priority",
 				"2. Implementing a stack data structure",
@@ -3134,9 +3134,9 @@
 		},
 		{
 			id: 111,
-			title: "#### Q111. What is the advantage of using a heap over a simple array for implementing a priority queue?",
+			title: "# Q111. What is the advantage of using a heap over a simple array for implementing a priority queue?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Heaps offer constant-time access to the element with the highest priority.",
 				"2. Heaps allow for more efficient insertion and deletion operations while maintaining the priority order.",
@@ -3149,9 +3149,9 @@
 		},
 		{
 			id: 112,
-			title: "#### Q112. What is the main difference between a binary search tree and a heap?",
+			title: "# Q112. What is the main difference between a binary search tree and a heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Binary search trees store elements in sorted order, while heaps store elements based on their priority.",
 				"2. Binary search trees allow for efficient searching, while heaps allow for efficient insertion and deletion.",
@@ -3164,9 +3164,9 @@
 		},
 		{
 			id: 113,
-			title: "#### Q113. What is the time complexity of sorting an array using bubble sort in the best-case scenario?",
+			title: "# Q113. What is the time complexity of sorting an array using bubble sort in the best-case scenario?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(1)"],
 			answer: "1. O(n)",
 			solution:
@@ -3174,9 +3174,9 @@
 		},
 		{
 			id: 114,
-			title: "#### Q114. What is the time complexity of searching for a specific element in a sorted array using binary search?",
+			title: "# Q114. What is the time complexity of searching for a specific element in a sorted array using binary search?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(log n)", "3. O(1)", "4. O(n^2)"],
 			answer: "2. O(log n)",
 			solution:
@@ -3184,9 +3184,9 @@
 		},
 		{
 			id: 115,
-			title: "#### Q115. Which of the following is a common application of a trie (prefix tree)?",
+			title: "# Q115. Which of the following is a common application of a trie (prefix tree)?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Implementing a stack data structure",
 				"2. Sorting data in ascending order",
@@ -3199,9 +3199,9 @@
 		},
 		{
 			id: 116,
-			title: "#### Q116. What is the main advantage of using a linked list over an array for implementing a queue?",
+			title: "# Q116. What is the main advantage of using a linked list over an array for implementing a queue?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Linked lists offer constant-time insertion and deletion at the front of the queue.",
 				"2. Linked lists are easier to implement than arrays.",
@@ -3214,9 +3214,9 @@
 		},
 		{
 			id: 117,
-			title: "#### Q117. What is the primary use case for a graph data structure?",
+			title: "# Q117. What is the primary use case for a graph data structure?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Representing hierarchical relationships between elements",
 				"2. Modeling interconnected networks and relationships",
@@ -3229,9 +3229,9 @@
 		},
 		{
 			id: 118,
-			title: "#### Q118. What is the time complexity of finding the minimum element in a min-heap?",
+			title: "# Q118. What is the time complexity of finding the minimum element in a min-heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(log n)", "3. O(1)", "4. O(n log n)"],
 			answer: "3. O(1)",
 			solution:
@@ -3239,9 +3239,9 @@
 		},
 		{
 			id: 119,
-			title: "#### Q119. Which of the following is NOT a common sorting algorithm?",
+			title: "# Q119. Which of the following is NOT a common sorting algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Merge Sort",
 				"2. Quick Sort",
@@ -3254,9 +3254,9 @@
 		},
 		{
 			id: 120,
-			title: "#### Q120. What is the primary difference between a directed graph and an undirected graph?",
+			title: "# Q120. What is the primary difference between a directed graph and an undirected graph?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Directed graphs have edges with a specific direction, while undirected graphs do not.",
 				"2. Undirected graphs have edges with a specific direction, while directed graphs do not.",
@@ -3269,9 +3269,9 @@
 		},
 		{
 			id: 121,
-			title: "#### Q121. What is the purpose of a disjoint set data structure?",
+			title: "# Q121. What is the purpose of a disjoint set data structure?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Storing elements in a specific order based on their priority",
 				"2. Representing a collection of sets where each element belongs to exactly one set",
@@ -3284,9 +3284,9 @@
 		},
 		{
 			id: 122,
-			title: "#### Q122. Which data structure is often used to implement a priority queue?",
+			title: "# Q122. Which data structure is often used to implement a priority queue?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. Linked List", "2. Array", "3. Heap", "4. Stack"],
 			answer: "3. Heap",
 			solution:
@@ -3294,9 +3294,9 @@
 		},
 		{
 			id: 123,
-			title: "#### Q123. What is the time complexity of finding the kth smallest element in a sorted array?",
+			title: "# Q123. What is the time complexity of finding the kth smallest element in a sorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 			solution:
@@ -3304,9 +3304,9 @@
 		},
 		{
 			id: 124,
-			title: "#### Q124. What is the primary difference between a stack and a queue in terms of data access?",
+			title: "# Q124. What is the primary difference between a stack and a queue in terms of data access?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Stacks are LIFO (Last-In, First-Out), queues are FIFO (First-In, First-Out)",
 				"2. Stacks are FIFO, queues are LIFO",
@@ -3319,9 +3319,9 @@
 		},
 		{
 			id: 125,
-			title: "#### Q125. What is the time complexity of deleting an element from the front of a queue implemented using a linked list?",
+			title: "# Q125. What is the time complexity of deleting an element from the front of a queue implemented using a linked list?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 			solution:
@@ -3329,9 +3329,9 @@
 		},
 		{
 			id: 126,
-			title: "#### Q126. What is the time complexity of inserting an element at the end of a queue implemented using an array?",
+			title: "# Q126. What is the time complexity of inserting an element at the end of a queue implemented using an array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 			solution:
@@ -3339,9 +3339,9 @@
 		},
 		{
 			id: 127,
-			title: "#### Q127. Which of the following is a common use case for a heap data structure?",
+			title: "# Q127. Which of the following is a common use case for a heap data structure?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Implementing a stack data structure",
 				"2. Sorting data in ascending order",
@@ -3354,9 +3354,9 @@
 		},
 		{
 			id: 128,
-			title: "#### Q128. What is the time complexity of finding the maximum element in a heap?",
+			title: "# Q128. What is the time complexity of finding the maximum element in a heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(log n)", "3. O(1)", "4. O(n log n)"],
 			answer: "3. O(1)",
 			solution:
@@ -3364,9 +3364,9 @@
 		},
 		{
 			id: 129,
-			title: "#### Q129. What is the time complexity of deleting an element from the end of a linked list?",
+			title: "# Q129. What is the time complexity of deleting an element from the end of a linked list?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 			solution:
@@ -3374,9 +3374,9 @@
 		},
 		{
 			id: 130,
-			title: "#### Q130. Which of the following is NOT a valid binary tree traversal method?",
+			title: "# Q130. Which of the following is NOT a valid binary tree traversal method?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Preorder Traversal",
 				"2. Inorder Traversal",
@@ -3389,9 +3389,9 @@
 		},
 		{
 			id: 131,
-			title: "#### Q131. What is the time complexity of finding the depth of a binary tree?",
+			title: "# Q131. What is the time complexity of finding the depth of a binary tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(log n)", "3. O(1)", "4. O(n log n)"],
 			answer: "1. O(n)",
 			solution:
@@ -3399,9 +3399,9 @@
 		},
 		{
 			id: 132,
-			title: "#### Q132. Which of the following is a common application of a graph data structure?",
+			title: "# Q132. Which of the following is a common application of a graph data structure?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Implementing a stack data structure",
 				"2. Sorting data in ascending order",
@@ -3414,9 +3414,9 @@
 		},
 		{
 			id: 133,
-			title: "#### Q133. What is the time complexity of inserting an element at the beginning of a linked list?",
+			title: "# Q133. What is the time complexity of inserting an element at the beginning of a linked list?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 			solution:
@@ -3424,9 +3424,9 @@
 		},
 		{
 			id: 134,
-			title: "#### Q134. What is the primary use case for a stack data structure?",
+			title: "# Q134. What is the primary use case for a stack data structure?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Implementing a queue data structure",
 				"2. Sorting data in ascending order",
@@ -3439,9 +3439,9 @@
 		},
 		{
 			id: 135,
-			title: "#### Q135. What is the time complexity of searching for an element in a binary search tree in the best-case scenario?",
+			title: "# Q135. What is the time complexity of searching for an element in a binary search tree in the best-case scenario?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(log n)", "3. O(1)", "4. O(n log n)"],
 			answer: "3. O(1)",
 			solution:
@@ -3449,9 +3449,9 @@
 		},
 		{
 			id: 136,
-			title: "#### Q136. Which of the following is a common sorting algorithm with an average time complexity of O(n log n)?",
+			title: "# Q136. Which of the following is a common sorting algorithm with an average time complexity of O(n log n)?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Bubble Sort",
 				"2. Insertion Sort",
@@ -3464,9 +3464,9 @@
 		},
 		{
 			id: 137,
-			title: "#### Q137. What is the purpose of a self-balancing binary search tree?",
+			title: "# Q137. What is the purpose of a self-balancing binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. To ensure that the tree is always balanced, even after insertions and deletions",
 				"2. To improve the efficiency of search operations",
@@ -3479,9 +3479,9 @@
 		},
 		{
 			id: 138,
-			title: "#### Q138. What is the time complexity of deleting an element from a heap?",
+			title: "# Q138. What is the time complexity of deleting an element from a heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(log n)", "3. O(1)", "4. O(n log n)"],
 			answer: "2. O(log n)",
 			solution:
@@ -3489,9 +3489,9 @@
 		},
 		{
 			id: 139,
-			title: "#### Q139. What is the time complexity of searching for an element in a hash table in the worst-case scenario?",
+			title: "# Q139. What is the time complexity of searching for an element in a hash table in the worst-case scenario?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 			solution:
@@ -3499,9 +3499,9 @@
 		},
 		{
 			id: 140,
-			title: "#### Q140. Which of the following is NOT a common dynamic programming problem?",
+			title: "# Q140. Which of the following is NOT a common dynamic programming problem?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Fibonacci sequence",
 				"2. Knapsack problem",
@@ -3514,9 +3514,9 @@
 		},
 		{
 			id: 141,
-			title: "#### Q141. What is the main advantage of using a linked list over an array for implementing a stack?",
+			title: "# Q141. What is the main advantage of using a linked list over an array for implementing a stack?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Linked lists offer constant-time insertion and deletion at the top of the stack.",
 				"2. Linked lists are easier to implement than arrays.",
@@ -3529,9 +3529,9 @@
 		},
 		{
 			id: 142,
-			title: "#### Q142. What is the purpose of a breadth-first search (BFS) algorithm?",
+			title: "# Q142. What is the purpose of a breadth-first search (BFS) algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. To find the shortest path between two nodes in an unweighted graph",
 				"2. To sort elements in alphabetical order",
@@ -3544,9 +3544,9 @@
 		},
 		{
 			id: 143,
-			title: "#### Q143. What is the time complexity of sorting an array using insertion sort in the best-case scenario?",
+			title: "# Q143. What is the time complexity of sorting an array using insertion sort in the best-case scenario?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(1)"],
 			answer: "1. O(n)",
 			solution:
@@ -3554,9 +3554,9 @@
 		},
 		{
 			id: 144,
-			title: "#### Q144. Which of the following is NOT a common application of a trie (prefix tree)?",
+			title: "# Q144. Which of the following is NOT a common application of a trie (prefix tree)?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Autocomplete suggestions in a search bar",
 				"2. Spell checking",
@@ -3569,9 +3569,9 @@
 		},
 		{
 			id: 145,
-			title: "#### Q145. What is the time complexity of finding the mode of an unsorted array?",
+			title: "# Q145. What is the time complexity of finding the mode of an unsorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "1. O(n)",
 			solution:
@@ -3579,9 +3579,9 @@
 		},
 		{
 			id: 146,
-			title: "#### Q146. Which of the following is a common self-balancing binary search tree?",
+			title: "# Q146. Which of the following is a common self-balancing binary search tree?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. AVL Tree", "2. B-Tree", "3. Heap", "4. Trie"],
 			answer: "1. AVL Tree",
 			solution:
@@ -3589,9 +3589,9 @@
 		},
 		{
 			id: 147,
-			title: "#### Q147. What is the purpose of a depth-first search (DFS) algorithm?",
+			title: "# Q147. What is the purpose of a depth-first search (DFS) algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. To find the shortest path between two nodes in an unweighted graph",
 				"2. To find all reachable nodes from a given source node",
@@ -3604,9 +3604,9 @@
 		},
 		{
 			id: 148,
-			title: "#### Q148. What is the time complexity of sorting an array using selection sort?",
+			title: "# Q148. What is the time complexity of sorting an array using selection sort?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(n log n)", "3. O(n^2)", "4. O(1)"],
 			answer: "3. O(n^2)",
 			solution:
@@ -3614,9 +3614,9 @@
 		},
 		{
 			id: 149,
-			title: "#### Q149. What is the primary use case for a queue data structure?",
+			title: "# Q149. What is the primary use case for a queue data structure?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Implementing a stack data structure",
 				"2. Sorting data in ascending order",
@@ -3629,9 +3629,9 @@
 		},
 		{
 			id: 150,
-			title: "#### Q150. What is the time complexity of inserting an element into a heap?",
+			title: "# Q150. What is the time complexity of inserting an element into a heap?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(log n)", "3. O(1)", "4. O(n log n)"],
 			answer: "2. O(log n)",
 			solution:
@@ -3639,9 +3639,9 @@
 		},
 		{
 			id: 151,
-			title: "#### Q151. Which data structure is best suited for implementing a First-In, First-Out (FIFO) behavior?",
+			title: "# Q151. Which data structure is best suited for implementing a First-In, First-Out (FIFO) behavior?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. Stack", "2. Queue", "3. Heap", "4. Tree"],
 			answer: "2. Queue",
 			solution:
@@ -3649,9 +3649,9 @@
 		},
 		{
 			id: 152,
-			title: "#### Q152. What is the time complexity of finding the range of a sorted array?",
+			title: "# Q152. What is the time complexity of finding the range of a sorted array?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 			solution:
@@ -3659,9 +3659,9 @@
 		},
 		{
 			id: 153,
-			title: "#### Q153. Which of the following is a common application of a dynamic programming algorithm?",
+			title: "# Q153. Which of the following is a common application of a dynamic programming algorithm?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: [
 				"1. Implementing a stack data structure",
 				"2. Sorting data in ascending order",
@@ -3674,9 +3674,9 @@
 		},
 		{
 			id: 154,
-			title: "#### Q154. What is the time complexity of deleting an element from the top of a stack implemented using a linked list?",
+			title: "# Q154. What is the time complexity of deleting an element from the top of a stack implemented using a linked list?",
 			text: null,
-			code2: null,
+			code2: " ",
 			choices: ["1. O(n)", "2. O(1)", "3. O(log n)", "4. O(n log n)"],
 			answer: "2. O(1)",
 			solution:
@@ -3689,7 +3689,7 @@
    let dsa3 = [
 	 {
     "id": 166,
-    "title": "#### Q166. Given a binary tree, find its maximum depth.",
+    "title": "# Q166. Given a binary tree, find its maximum depth.",
     "text": null,
     "code2": "```cpp<br>struct TreeNode {<br>  int val;<br>  TreeNode *left;<br>  TreeNode *right;<br>  TreeNode() : val(0), left(nullptr), right(nullptr) {}<br>  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}<br>  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}<br>};<br><br>int maxDepth(TreeNode* root) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3703,7 +3703,7 @@
   },
   {
     "id": 167,
-    "title": "#### Q167. Given a string, find the length of the longest substring without repeating characters.",
+    "title": "# Q167. Given a string, find the length of the longest substring without repeating characters.",
     "text": null,
     "code2": "```cpp<br>int lengthOfLongestSubstring(string s) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3717,7 +3717,7 @@
   },
   {
     "id": 168,
-    "title": "#### Q168. Given a string, check if it is a valid parentheses string.",
+    "title": "# Q168. Given a string, check if it is a valid parentheses string.",
     "text": null,
     "code2": "```cpp<br>bool isValidParentheses(string s) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3731,7 +3731,7 @@
   },
   {
     "id": 169,
-    "title": "#### Q169. Given a string, find the first unique character in the string.",
+    "title": "# Q169. Given a string, find the first unique character in the string.",
     "text": null,
     "code2": "```cpp<br>char firstUniqueChar(string s) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3745,7 +3745,7 @@
   },
   {
     "id": 170,
-    "title": "#### Q170. Given an array of integers, find the two numbers that add up to a given target.",
+    "title": "# Q170. Given an array of integers, find the two numbers that add up to a given target.",
     "text": null,
     "code2": "```cpp<br>vector<int> twoSum(vector<int>& nums, int target) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3759,7 +3759,7 @@
   },
   {
     "id": 171,
-    "title": "#### Q171. Given an array of integers, find the maximum product of two numbers.",
+    "title": "# Q171. Given an array of integers, find the maximum product of two numbers.",
     "text": null,
     "code2": "```cpp<br>int maxProduct(vector<int>& nums) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3774,7 +3774,7 @@
  
   {
     "id": 173,
-    "title": "#### Q173. Given an array of integers, find the sum of all even numbers in the array.",
+    "title": "# Q173. Given an array of integers, find the sum of all even numbers in the array.",
     "text": null,
     "code2": "```cpp<br>int sumEvenNumbers(vector<int>& nums) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3788,7 +3788,7 @@
   },
   {
     "id": 174,
-    "title": "#### Q174. Given an array of integers, find the product of all numbers in the array.",
+    "title": "# Q174. Given an array of integers, find the product of all numbers in the array.",
     "text": null,
     "code2": "```cpp<br>int productOfNumbers(vector<int>& nums) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3802,7 +3802,7 @@
   },
   {
     "id": 175,
-    "title": "#### Q175. Given a string, find the number of vowels in the string.",
+    "title": "# Q175. Given a string, find the number of vowels in the string.",
     "text": null,
     "code2": "```cpp<br>int countVowels(string s) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3816,7 +3816,7 @@
   },
   {
     "id": 176,
-    "title": "#### Q176. Given a string, find the number of consonants in the string.",
+    "title": "# Q176. Given a string, find the number of consonants in the string.",
     "text": null,
     "code2": "```cpp<br>int countConsonants(string s) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3830,7 +3830,7 @@
   },
   {
     "id": 177,
-    "title": "#### Q177. Given a string, check if it is a valid email address.",
+    "title": "# Q177. Given a string, check if it is a valid email address.",
     "text": null,
     "code2": "```cpp<br>bool isValidEmail(string email) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
@@ -3844,7 +3844,7 @@
   },
   {
     "id": 178,
-    "title": "#### Q178. Given a string, find the number of words in the string.",
+    "title": "# Q178. Given a string, find the number of words in the string.",
     "text": null,
     "code2": "```cpp<br>int countWords(string s) {<br>  // Implement the logic here<br>}<br>```",
     "choices": [
