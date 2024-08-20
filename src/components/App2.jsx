@@ -53,6 +53,7 @@ function App2() {
 	const [code, setCode] = useState("");
 	const [choices, setChoices] = useState([]);
 	const [answer, setAnswer] = useState("");
+	const [solution, setsolution] = useState();
 
 	const [randomNumber, setRandomNumber] = useState(2);
 
@@ -80,14 +81,21 @@ function App2() {
 		chrome.runtime.sendMessage(
 			{ message: "getRandomQuestion" },
 			(response) => {
-				console.log("Initial response received:", response);
+				
 
-				console.log("code is ", response[0].code2);
+				console.log("code is ", response[0].code2,"and else is ", response[0].title);
+				console.log("response is:", response);
+				// if(response[0].code2  == null){
+				// 	setCode("a");
+
+				// }
+
 				if (response && response.length > 0) {
 					console.log(response[0].answer);
 					setAnswer(response[0].answer);
 					setTitle(response[0].title);
 					setChoices(response[0].choices);
+					setsolution(response[0].solution);
 					const plainCode = stripHtmlTags(response[0].code2);
 					// console.log("response code is ", response[0].code2);
 					// console.log("plain code is", plainCode);
@@ -95,6 +103,9 @@ function App2() {
 					console.log("logging no",response[0].answer[0])
 					console.log(typeof response[0].answer);
 					setCorrectAnswerNo(response[0].answer[0])
+
+
+					
 				}
 			}
 		);
@@ -145,9 +156,10 @@ function App2() {
 			)}
 
 			<pre
-				className={`aside  ccpp  text-2xl ${editCode ? "hidden" : ""}`}
+				className={`hidden  text-2xl ${editCode ? "hidden" : ""}`}
 				onChange={(e) => {
 					setCode(e.target.value);
+					
 				}}
 			>
 				<code className='language-cpp'>{code}</code>
@@ -160,9 +172,16 @@ function App2() {
 				></codapi-snippet>{" "}
 				<button
 					className='bg-blue-500 text-white p-2 rounded-md m-4'
-					onClick={() => setEditCode(false)}
+					onClick={(e) => {
+						window.navigator.clipboard.writeText(code);
+						const button = e.target;
+						button.classList.add('bg-green-500', 'text-white');
+						setTimeout(() => {
+							button.classList.remove('bg-green-500', 'text-white');
+						}, 200);
+					}}
 				>
-					edit code
+					copy to clipborad
 				</button>
 			</h1>
 
@@ -180,24 +199,28 @@ function App2() {
 										? greenify
 										: reddify
 								}`}
-								onMouseEnter={() => {}}
+								onMouseEnter={() => {
+									
+								}}
 								onClick={() => {
 									console.log("playing song");
+										const audio2 = new Audio(
+											`../assets/incorrect.mp3`
+										);
+										const audio = new Audio(
+											`../assets/correct.mp3`
+										);
 
 									if (option[0] != correctAnswerNo) {
 										console.log("wrong ans");
-										const audio = new Audio(
-											`../assets/incorrect.mp3`
-										);
-										audio.play();
+									
+										audio2.play();
 									}
 
 									setSelectedOption(option[0]);
 									if (option[0] == correctAnswerNo) {
 										console.log("kar de hara");
-										const audio = new Audio(
-											`../assets/correct.mp3`
-										);
+										
 										audio.play();
 										setGreenify(
 											"outline outline-green-500 bg-green-100 text-green-500 border border-solid border-2 hover:bg-green-400"
@@ -238,10 +261,14 @@ function App2() {
 
 			<p className='text-2xl m-4 '>{variabletoAnswer ? answer : ""}</p>
 
+			{variabletoAnswer && <p className="m-2">{solution}</p>}
+
 			{variabletoAnswer && (
 				<button
 					className='bg-blue-500 text-black p-2 rounded-md m-4'
-					onClick={fetchNextQuestion}
+					onClick={(e)=>{
+						window.location.reload();
+					}}
 				>
 					next question
 				</button>
