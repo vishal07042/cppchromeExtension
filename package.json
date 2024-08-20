@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@antonz/codapi": "^0.19.7",
+    "@codemirror/commands": "^6.6.0",
     "@codemirror/lang-cpp": "^6.0.2",
     "@codemirror/lang-markdown": "^6.2.5",
     "@codemirror/language-data": "^6.5.1",
     "@codemirror/legacy-modes": "^6.4.0",
+    "@replit/codemirror-vscode-keymap": "^6.0.2",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
     "@uiw/react-codemirror": "^4.23.0",

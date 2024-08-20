@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 import CodeMirror from "@uiw/react-codemirror";
+
 import { StreamLanguage } from "@codemirror/language";
 import { cpp } from "@codemirror/lang-cpp";
 import { basicSetup } from "codemirror";
-import { EditorView } from "@codemirror/view";
+import { EditorView, keymap } from "@codemirror/view";
+import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
 
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -105,7 +107,6 @@ function App2() {
 						) + 2;
 
 					console.log("Correct option number:", correctAnswerNumber);
-
 				}
 
 				// The first element of this split is the checked option
@@ -151,7 +152,9 @@ function App2() {
 					extensions={[cpp()]}
 					theme='dark' // Optional: Choose a theme
 					basicSetup={basicSetup}
-					onChange={(values) => {}}
+					onChange={(values) => {
+						setCode(values);
+					}}
 				/>
 			)}
 
@@ -161,17 +164,7 @@ function App2() {
 					setCode(e.target.value);
 				}}
 			>
-				<code className='language-cpp'>
-					{`#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
-
-int main() {
-    
-    ${code}
-}`}
-				</code>
+				<code className='language-cpp'>{code}</code>
 			</pre>
 			<h1>
 				<codapi-snippet
