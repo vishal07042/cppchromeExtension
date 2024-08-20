@@ -66,6 +66,16 @@ function App2() {
 
 	const [selectedOption, setSelectedOption] = useState(null);
 
+
+
+
+
+		
+
+
+
+
+
 	useEffect(() => {
 		chrome.runtime.sendMessage(
 			{ message: "getRandomQuestion" },
@@ -130,15 +140,7 @@ function App2() {
 					onChange={(value) => {
 						setCode(value);
 					}}
-					onKeyDown={(event) => {
-						let typedKeys = '';
-						console.log("User is typing:", event.key);
-						typedKeys += event.key;
-						if (typedKeys === 'io') {
-							setCode(prevCode => prevCode.replace('io', 'int main(){}'));
-							typedKeys = '';
-						}
-					}}
+				
 				/>
 			)}
 
@@ -174,26 +176,21 @@ function App2() {
 							<button
 								key={idx}
 								className={`card w-full flex items-center justify-between px-12 py-2 border rounded-lg m-4 ${
-									selectedOption === option[0] ?greenify:reddify
+									selectedOption === option[0]
+										? greenify
+										: reddify
 								}`}
-								onMouseEnter={() => {
-									
-									
-									
-								}}
+								onMouseEnter={() => {}}
 								onClick={() => {
 									console.log("playing song");
 
-									if(option[0] != correctAnswerNo){
+									if (option[0] != correctAnswerNo) {
 										console.log("wrong ans");
 										const audio = new Audio(
 											`../assets/incorrect.mp3`
 										);
 										audio.play();
-
 									}
-
-									
 
 									setSelectedOption(option[0]);
 									if (option[0] == correctAnswerNo) {
@@ -202,19 +199,20 @@ function App2() {
 											`../assets/correct.mp3`
 										);
 										audio.play();
-											setGreenify(
-												"outline outline-green-500 bg-green-100 text-green-500 border border-solid border-2 hover:bg-green-400"
-											);
+										setGreenify(
+											"outline outline-green-500 bg-green-100 text-green-500 border border-solid border-2 hover:bg-green-400"
+										);
 
-											setReddify("outline outline-red-500")
-
-											
-											
+										setReddify("outline outline-red-500");
 									}
 								}}
 							>
 								<span className='text-xl font-semibold '>
-									{musicalNotes[(index + idx) % musicalNotes.length]}
+									{
+										musicalNotes[
+											(index + idx) % musicalNotes.length
+										]
+									}
 								</span>
 								<span className=' items-center font-bold text-2xl px-4'>
 									{option
@@ -240,14 +238,14 @@ function App2() {
 
 			<p className='text-2xl m-4 '>{variabletoAnswer ? answer : ""}</p>
 
-				{variabletoAnswer && (
-					<button
-						className='bg-blue-500 text-black p-2 rounded-md m-4'
-						onClick={fetchNextQuestion}
-					>
-						next question
-					</button>
-				)}
+			{variabletoAnswer && (
+				<button
+					className='bg-blue-500 text-black p-2 rounded-md m-4'
+					onClick={fetchNextQuestion}
+				>
+					next question
+				</button>
+			)}
 		</div>
 	);
 }
