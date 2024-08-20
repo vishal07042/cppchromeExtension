@@ -60,6 +60,10 @@ function App2() {
 
 	const [editCode, setEditCode] = useState(true);
 
+	const [correctAnswerNo,setCorrectAnswerNo] = useState();
+
+	const [selectedOption, setSelectedOption] = useState(null);
+
 	useEffect(() => {
 		chrome.runtime.sendMessage(
 			{ message: "getRandomQuestion" },
@@ -73,9 +77,12 @@ function App2() {
 					setTitle(response[0].title);
 					setChoices(response[0].choices);
 					const plainCode = stripHtmlTags(response[0].code2);
-					console.log("response code is ", response[0].code2);
-					console.log("plain code is", plainCode);
+					// console.log("response code is ", response[0].code2);
+					// console.log("plain code is", plainCode);
 					setCode(plainCode);
+					console.log("logging no",response[0].answer[0])
+					console.log(typeof response[0].answer);
+					setCorrectAnswerNo(response[0].answer[0])
 				}
 			}
 		);
@@ -146,40 +153,6 @@ function App2() {
 				</button>
 			</h1>
 
-			{/* {choices.map((choice, index) => {
-				const options = choice.split(/ - \\[ \] | - \\[x\\]/);
-				const musicalNotes = ["♪", "♫", "♬", "♩"];
-				
-				return (
-					<div key={index} className='space-y-2'>
-						{options.map((option, idx) => (
-							<button
-								key={idx}
-								className=' card w-full flex items-center justify-between px-12 py-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 m-4 '
-								onMouseEnter={() => {
-									console.log("playing song");
-									// Using onMouseEnter instead of onClick to play the sound on hover
-									// This will play the sound when the mouse enters the button area
-									const audio = new Audio(`../assets/correct.mp3`);
-									audio.play();
-								}}
-							>
-								<span className='text-xl font-semibold'>
-									{musicalNotes[idx]}
-								</span>
-								<span className='text-gray-900 items-center font-bold  text-2xl px-4'>
-									{option
-										.replace(/\\/g, "")
-										.replace(/\\[x\\]/g, "")
-										.replace(/[\]x]/g, "")
-										.trim()}
-								</span>
-							</button>
-						))}
-					</div>
-				);
-			})} */}
-
 			{choices.map((choice, index) => {
 				const options = choice.split(/ - \\[ \] | - \\[x\\]/);
 				const musicalNotes = ["♪", "♫", "♬", "♩"];
@@ -189,13 +162,24 @@ function App2() {
 						{options.map((option, idx) => (
 							<button
 								key={idx}
-								className='card w-full flex items-center justify-between px-12 py-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 m-4'
+								className={`card w-full flex items-center justify-between px-12 py-2 border rounded-lg m-4 ${
+									selectedOption === option[0] && option[0] == correctAnswerNo
+										? "bg-green-500 text-white"
+										: "bg-white text-gray-700 hover:bg-gray-100"
+								}`}
 								onMouseEnter={() => {
 									console.log("playing song");
 									const audio = new Audio(
 										`../assets/correct.mp3`
 									);
 									audio.play();
+								}}
+								onClick={() => {
+									setSelectedOption(option[0]);
+									if (option[0] == correctAnswerNo) {
+										console.log("kar de hara");
+										setSelectedOption(option[0]);
+									}
 								}}
 							>
 								<span className='text-xl font-semibold'>
