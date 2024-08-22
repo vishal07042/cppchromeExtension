@@ -215,6 +215,7 @@ function App2() {
 										console.log("wrong ans");
 									
 										audio2.play();
+									
 									}
 
 									setSelectedOption(option[0]);
@@ -227,6 +228,11 @@ function App2() {
 										);
 
 										setReddify("outline outline-red-500");
+
+										setTimeout(() => {
+											window.location.reload()
+											// Add any additional actions you want to perform after 5 seconds
+										}, 7000);
 									}
 								}}
 							>
@@ -261,7 +267,7 @@ function App2() {
 
 			<p className='text-2xl m-4 '>{variabletoAnswer ? answer : ""}</p>
 
-			{variabletoAnswer && <p className="m-2">{solution}</p>}
+			{variabletoAnswer && <p text-2xl  className="m-2">{solution}</p>}
 
 			{variabletoAnswer && (
 				<button
