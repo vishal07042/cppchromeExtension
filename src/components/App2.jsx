@@ -17,12 +17,17 @@ import cpps from "highlight.js/lib/languages/cpp";
 
 // Define some example suggestions for autocomplete
 const cppSuggestions = [
-  { label: 'int', type: 'keyword' },
-  { label: 'float', type: 'keyword' },
-  { label: 'std::cout', type: 'function' },
-//   { label: 'iostream', type: 'keyword' },
-  { label: 'main', type: 'snippet', insertText: 'int main(){return 0;}' },
-  // Add more suggestions as needed
+	{ label: "int", type: "keyword" },
+	{ label: "float", type: "keyword" },
+	{ label: "std::cout", type: "function" },
+	//   { label: 'iostream', type: 'keyword' },
+	// { label: "#include", type: "keyword" },
+	// { label: "#include <iostream>", type: "snippet" },
+	// { label: "#include <vector>", type: "snippet" },
+	// { label: "#include <string>", type: "snippet" },
+	// { label: "#include <algorithm>", type: "snippet" },
+	{ label: " #include <iostream> \n using namespace std; \nint main(){  \n \n return 0;\n}", type: "snippet" },
+	// Add more suggestions as needed
 ];
 
 
@@ -237,7 +242,7 @@ function App2() {
 										setTimeout(() => {
 											window.location.reload()
 											// Add any additional actions you want to perform after 5 seconds
-										}, 7000);
+										}, 12000);
 									}
 								}}
 							>
