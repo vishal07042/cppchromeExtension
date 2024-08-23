@@ -200,6 +200,11 @@ function App2() {
 										: reddify
 								}`}
 								onMouseEnter={() => {
+									const num =  Math.floor(Math.random()*89)
+									console.log(num);
+
+									const aad = new Audio(`../assets/piano-mp3/${num}.mp3`)
+									aad.play();
 									
 								}}
 								onClick={() => {
