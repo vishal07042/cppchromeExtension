@@ -14,7 +14,6 @@ import javascript from "highlight.js/lib/languages/javascript";
 import cpps from "highlight.js/lib/languages/cpp";
 // import { autocompletion } from "@codemirror/autocomplete";
 
-
 // Define some example suggestions for autocomplete
 const cppSuggestions = [
 	{ label: "int", type: "keyword" },
@@ -30,12 +29,9 @@ const cppSuggestions = [
 	// Add more suggestions as needed
 ];
 
-
 const autocompleteExtension = autocompletion({
 	override: [completeFromList(cppSuggestions)],
 });
-
-
 
 const stripHtmlTags = (html) => {
 	const tempDiv = document.createElement("div");
@@ -51,7 +47,6 @@ const stripHtmlTags = (html) => {
 function App2() {
 	// const ccpp = hljs.registerLanguage("cpp", cpp);
 
-	
 	const [fullCode, setFullCode] = useState(``);
 
 	const [title, setTitle] = useState("");
@@ -72,22 +67,11 @@ function App2() {
 
 	const [selectedOption, setSelectedOption] = useState(null);
 
-
-
-
-
-		
-
-
-
-
-
 	useEffect(() => {
 		chrome.runtime.sendMessage(
 			{ message: "getRandomQuestion" },
 			(response) => {
 				
-
 				console.log("code is ", response[0].code2,"and else is ", response[0].title);
 				console.log("response is:", response);
 				// if(response[0].code2  == null){
@@ -109,8 +93,6 @@ function App2() {
 					console.log(typeof response[0].answer);
 					setCorrectAnswerNo(response[0].answer[0])
 
-
-					
 				}
 			}
 		);
@@ -142,15 +124,19 @@ function App2() {
 	});
 	return (
 		<div className='relative w-full min-h-screen overflow-y-auto flex flex-col items-center p-10 z-10'>
-			<h2 className='text-2xl mt-10'>{title}</h2>
+			<h2 className='text-2xl mt-10' onMouseUp={(e) => {
+				const selectedText = window.getSelection().toString();
+				if (selectedText) {
+					window.navigator.clipboard.writeText(selectedText);
+					console.log("written to clipboard");
+				}
+			}}>{title}</h2>
 
 			{code && (
 				<CodeMirror
 					className='  CodeMirror text-3xl mt-10 line-height-10 '
 					value={code}
-					// height='700px'
-					// width='990px'
-					extensions={[cpp(), autocompleteExtension, vim()]}
+					 extensions={[cpp(), autocompleteExtension, vim()]}
 					theme='dark' // Optional: Choose a theme
 					basicSetup={basicSetup}
 					onChange={(value) => {
@@ -205,7 +191,7 @@ function App2() {
 										: reddify
 								}`}
 								onMouseEnter={() => {
-									const num =  Math.floor(Math.random()*89)
+									const num =  Math.floor(Math.random()*89)+1;
 									console.log(num);
 
 									const aad = new Audio(`../assets/piano-mp3/${num}.mp3`)
