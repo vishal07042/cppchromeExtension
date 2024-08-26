@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import CodeMirror from "@uiw/react-codemirror";
 import { StreamLanguage } from "@codemirror/language";
@@ -9,9 +9,12 @@ import { autocompletion, completeFromList } from "@codemirror/autocomplete";
 
 import { vim } from "@replit/codemirror-vim";
 
+import ConfettiExplosion from 'react-confetti-explosion';
+
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 import cpps from "highlight.js/lib/languages/cpp";
+import confetti from "canvas-confetti";
 // import { autocompletion } from "@codemirror/autocomplete";
 
 // Define some example suggestions for autocomplete
@@ -45,8 +48,9 @@ const stripHtmlTags = (html) => {
 };
 
 function App2() {
+	
 	// const ccpp = hljs.registerLanguage("cpp", cpp);
-
+	const [isExploding, setIsExploding] = React.useState(false);
 	const [fullCode, setFullCode] = useState(``);
 
 	const [title, setTitle] = useState("");
@@ -61,7 +65,7 @@ function App2() {
 
 	const [editCode, setEditCode] = useState(true);
 
-	const [correctAnswerNo,setCorrectAnswerNo] = useState();
+	const [correctAnswerNo, setCorrectAnswerNo] = useState();
 	const [greenify, setGreenify] = useState("");
 	const [reddify, setReddify] = useState("");
 
@@ -71,8 +75,8 @@ function App2() {
 		chrome.runtime.sendMessage(
 			{ message: "getRandomQuestion" },
 			(response) => {
-				
-				console.log("code is ", response[0].code2,"and else is ", response[0].title);
+
+				console.log("code is ", response[0].code2, "and else is ", response[0].title);
 				console.log("response is:", response);
 				// if(response[0].code2  == null){
 				// 	setCode("a");
@@ -89,9 +93,9 @@ function App2() {
 					// console.log("response code is ", response[0].code2);
 					// console.log("plain code is", plainCode);
 					setCode(plainCode);
-					console.log("logging no",response[0].answer[0])
+					console.log("logging no", response[0].answer[0]);
 					console.log(typeof response[0].answer);
-					setCorrectAnswerNo(response[0].answer[0])
+					setCorrectAnswerNo(response[0].answer[0]);
 
 				}
 			}
@@ -124,6 +128,7 @@ function App2() {
 	});
 	return (
 		<div className='relative w-full min-h-screen overflow-y-auto flex flex-col items-center p-10 z-10'>
+			
 			<h2 className='text-2xl mt-10' onMouseUp={(e) => {
 				const selectedText = window.getSelection().toString();
 				if (selectedText) {
@@ -136,13 +141,13 @@ function App2() {
 				<CodeMirror
 					className='  CodeMirror text-3xl mt-10 line-height-10 '
 					value={code}
-					 extensions={[cpp(), autocompleteExtension, vim()]}
+					extensions={[cpp(), autocompleteExtension, vim()]}
 					theme='dark' // Optional: Choose a theme
 					basicSetup={basicSetup}
 					onChange={(value) => {
 						setCode(value);
 					}}
-				
+
 				/>
 			)}
 
@@ -150,7 +155,7 @@ function App2() {
 				className={`hidden  text-2xl ${editCode ? "hidden" : ""}`}
 				onChange={(e) => {
 					setCode(e.target.value);
-					
+
 				}}
 			>
 				<code className='language-cpp'>{code}</code>
@@ -176,6 +181,8 @@ function App2() {
 				</button>
 			</h1>
 
+			{isExploding && <ConfettiExplosion  force={0.8} duration={2700} particleCount={250} width={1600} />}
+
 			{choices.map((choice, index) => {
 				const options = choice.split(/ - \\[ \] | - \\[x\\]/);
 				const musicalNotes = ["♪", "♫", "♬", "♩"];
@@ -185,39 +192,41 @@ function App2() {
 						{options.map((option, idx) => (
 							<button
 								key={idx}
-								className={`card w-full flex items-center justify-between px-12 py-2 border rounded-lg m-4 ${
-									selectedOption === option[0]
+								className={`card w-full flex items-center justify-between px-12 py-2 border rounded-lg m-4 ${selectedOption === option[0]
 										? greenify
 										: reddify
-								}`}
+									}`}
 								onMouseEnter={() => {
-									const num =  Math.floor(Math.random()*89)+1;
+									const num = Math.floor(Math.random() * 89) + 1;
 									console.log(num);
 
-									const aad = new Audio(`../assets/piano-mp3/${num}.mp3`)
+									const aad = new Audio(`../assets/piano-mp3/${num}.mp3`);
 									aad.play();
-									
+
 								}}
 								onClick={() => {
 									console.log("playing song");
-										const audio2 = new Audio(
-											`../assets/incorrect.mp3`
-										);
-										const audio = new Audio(
-											`../assets/correct.mp3`
-										);
+									const audio2 = new Audio(
+										`../assets/incorrect.mp3`
+									);
+									const audio = new Audio(
+										`../assets/correct.mp3`
+									);
 
 									if (option[0] != correctAnswerNo) {
 										console.log("wrong ans");
-									
+
 										audio2.play();
-									
+
 									}
 
 									setSelectedOption(option[0]);
 									if (option[0] == correctAnswerNo) {
 										console.log("kar de hara");
-										
+										setIsExploding(true);
+
+										chrome.runtime.sendMessage({ message: "correct" });
+
 										audio.play();
 										setGreenify(
 											"outline outline-green-500 bg-green-100 text-green-500 border border-solid border-2 hover:bg-green-400"
@@ -226,7 +235,7 @@ function App2() {
 										setReddify("outline outline-red-500");
 
 										setTimeout(() => {
-											window.location.reload()
+											window.location.reload();
 											// Add any additional actions you want to perform after 5 seconds
 										}, 12000);
 									}
@@ -235,7 +244,7 @@ function App2() {
 								<span className='text-xl font-semibold '>
 									{
 										musicalNotes[
-											(index + idx) % musicalNotes.length
+										(index + idx) % musicalNotes.length
 										]
 									}
 								</span>
@@ -263,12 +272,12 @@ function App2() {
 
 			<p className='text-2xl m-4 '>{variabletoAnswer ? answer : ""}</p>
 
-			{variabletoAnswer && <p text-2xl  className="m-2">{solution}</p>}
+			{variabletoAnswer && <p text-2xl className="m-2">{solution}</p>}
 
 			{variabletoAnswer && (
 				<button
 					className='bg-blue-500 text-black p-2 rounded-md m-4'
-					onClick={(e)=>{
+					onClick={(e) => {
 						window.location.reload();
 					}}
 				>

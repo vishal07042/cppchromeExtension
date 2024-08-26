@@ -11,6 +11,7 @@ export default defineConfig({
 				background: resolve(__dirname, "background.js"),
 				content: resolve(__dirname, "content.js"),
 				codeRunner: resolve(__dirname, "codeRunner.js"),
+				script2: resolve(__dirname, "script2.js"),
 			},
 			output: {
 				entryFileNames: '[name].js', // Keep the original file names
